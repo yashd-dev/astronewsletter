@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -13,39 +14,109 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/src/styles/globals.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
+		  <div class=" sticky top-0 flex w-full items-center justify-between border-b-4 border-gray-400  bg-inherit p-10 text-base font-extrabold z-10">
+          <a
+            href="/"
+            class="link-underline link-underline-black groww bg-inherit font-robotomono text-lg text-[#70acc7] lg:text-3xl"
+          >
+            ACM CHRONICLES
+          </a>
+
+          <a
+            href="/Archive"
+            class="link-underline link-underline-black groww font-robotomono text-lg lg:text-3xl"
+          >
+            ARCHIVES
+          </a>
+        </div>
 		<slot />
+		 <div class=" sticky flex w-full items-center justify-between border-t-4 border-gray-400 p-10 text-base font-black">
+          <div class=" flex flex-row flex-wrap font-robotomono text-lg lg:text-3xl">
+            <a href="https://www.instagram.com/acm_mpstme/" target="_blank">
+              <img
+                src={"/src/public/square-instagram.svg"}
+                
+                
+                class=" groww h-5 w-5 dark:hidden lg:h-10 lg:w-10 "
+              />
+
+              <img
+                src={"/src/public/instagramdark.svg"}
+                
+                
+                class=" groww hidden h-5 w-5 hover:outline-fuchsia-500 dark:block lg:h-10 lg:w-10"
+              />
+            </a>
+
+            <div class=" p-2 lg:p-4"></div>
+
+            <a href="https://discord.gg/V8sgnZP3YU" target="_blank">
+              <img
+                src={"/src/public/discord.svg"}
+                
+                
+                class=" groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
+              />
+
+              <img
+                src={"/src/public/discorddark.svg"}
+                
+                
+                class=" groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
+              />
+            </a>
+
+            <div class=" p-2 lg:p-4"></div>
+
+            <a
+              href="https://www.linkedin.com/company/acm-nmims-mpstme/"
+              target="_blank"
+            >
+              <img
+                src={"/src/public/linkedin.svg"}
+                
+                
+                class=" groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
+              />
+
+              <img
+                src={"/src/public/linkedindark.svg"}
+                
+                
+                class=" groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
+              />
+            </a>
+
+            <div class=" p-2 lg:p-4"></div>
+
+            <a href="https://github.com/acm-mpstme-tech" target="_blank">
+              <img
+                src={"/src/public/square-github.svg"}
+                
+                
+                class=" groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
+              />
+
+              <img
+                src={"/src/public/square-githubdark.svg"}
+                
+                
+                class=" groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
+              />
+            </a>
+          </div>
+
+          <a
+            href="/About"
+            class="link-underline link-underline-black groww font-robotomono text-lg lg:text-3xl"
+          >
+            ABOUT US
+          </a>
+        </div>
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
