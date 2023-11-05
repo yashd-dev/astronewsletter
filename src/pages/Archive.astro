@@ -1,0 +1,44 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Newrow } from "../components/archive";
+---
+
+<Layout>
+	<div class="intro bg-gradients">
+		<div
+			class="justify center relative mx-4 flex min-h-screen flex-col py-8 lg:mx-20 lg:py-12"
+		>
+			<div
+				class="animate-spin-slow fixed -right-1/4 top-96 hidden h-80 w-1/2 opacity-50 blur-[120px] filter dark:block"
+			>
+				{
+					/* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
+				}
+
+				<div class="relative z-0">
+					<div class="z-0 h-60 w-full rounded-full bg-sky-600"></div>
+					<div
+						class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-teal-700"
+					>
+					</div>
+					<div
+						class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-fuchsia-800"
+					>
+					</div>
+				</div>
+			</div>
+			<h1
+				class="overflow-visible px-1 py-5 font-robotomono text-6xl font-extrabold tracking-wide lg:p-10 lg:text-7xl"
+			>
+				<mark class="rounded bg-cyan-500 px-2 text-white">Archives</mark
+				>{" "}
+			</h1>
+			<Newrow
+				img={"/src/public/Ed1-Title.jpg"}
+				title={"First Edition"}
+				desc={"In this Edition we covered DDos Attacks, News about Stadia being shut down, USB C law and so much more fun stuff"}
+				link={"/Edition1"}
+			/>
+		</div>
+	</div>
+</Layout>

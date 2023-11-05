@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+	<div class="intro min-h-screen">
+		<div
+			class="relative m-auto min-h-full items-center justify-between gap-48 overflow-hidden px-8 pt-8 lg:grid lg:grid-cols-2 lg:px-0 lg:pl-8 lg:pt-12"
+		>
+			<div
+				class="animate-spin-slow absolute -right-1/4 top-64 hidden h-80 w-1/2 opacity-50 blur-[120px] filter dark:block"
+			>
+				{
+					/* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
+				}
+
+				<div class="relative z-0">
+					<div class="z-0 h-60 w-full rounded-full bg-sky-600"></div>
+					<div
+						class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-cyan-700"
+					>
+					</div>
+					<div
+						class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-violet-600"
+					>
+					</div>
+				</div>
+			</div>
+			<img
+				src="/src/public/team checklist-amico.svg"
+				width="0"
+				height="0"
+				sizes="100vw"
+				class="order-last h-auto w-[45rem] animate-bounce bg-transparent"
+			/>{" "}
+			<div>
+				<h1
+					class="m-auto py-8 text-4xl font-extrabold lg:pb-14 lg:pt-32 lg:text-6xl"
+				>
+					About ACM MPSTME <span class="sparkles">✨</span>
+				</h1>
+
+				<h3 class="text-xl tracking-wider lg:py-10 lg:text-3xl">
+					{" "}
+					 The ACM Student Chapter at MPSTME is a community empowering
+					students with tech-driven learning and networking
+					opportunities, facilitating skill development and
+					exploration of the latest technology trends. Through coding
+					competitions, workshops, and seminars, it fosters skill
+					development and networking in computer science.
+				</h3>
+			</div>
+		</div>
+	</div>
+</Layout>

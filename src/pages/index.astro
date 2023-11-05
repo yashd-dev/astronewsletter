@@ -1,48 +1,64 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import MyForm from '../components/forms';
+import Layout from "../layouts/Layout.astro";
+import MyForm from "../components/forms";
 ---
 
-<Layout title="Welcome to Astro.">
-	 <div>
-      <div class=" relative m-auto min-h-screen w-full overflow-hidden bg-transparent px-8 py-8 lg:grid lg:grid-cols-2 lg:content-stretch lg:items-center lg:justify-between lg:py-10 ">
-        <div class="animate-spin-slow absolute -right-1/4 top-64 hidden h-64 w-1/2  opacity-50 blur-[120px] filter dark:block">
-          {/* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */}
+<Layout>
+	<div
+		class="relative m-auto min-h-screen w-full overflow-hidden bg-transparent px-8 py-8 lg:grid lg:grid-cols-2 lg:content-stretch lg:items-center lg:justify-between lg:py-10"
+	>
+		<div
+			class="animate-spin-slow absolute -right-1/4 top-64 hidden h-64 w-1/2 opacity-50 blur-[120px] filter dark:block"
+		>
+			{
+				/* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
+			}
 
-          <div class="relative z-0">
-            <div class="z-0 h-60 w-full rounded-full bg-blue-600"></div>
-            <div class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-blue-700"></div>
-            <div class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-purple-600"></div>
-          </div>
-        </div>
+			<div class="relative z-0">
+				<div class="z-0 h-60 w-full rounded-full bg-blue-600"></div>
+				<div
+					class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-blue-700"
+				>
+				</div>
+				<div
+					class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-purple-600"
+				>
+				</div>
+			</div>
+		</div>
 
-        <div class=" order-last bg-transparent  lg:pl-48">
-          {/* On Mobile, the image is at the top and the text is at the bottom. On Desktop, the image is on the right and the text is on the left. */}
-          <img
-            src="/src/public/Envelope-amico.svg"
-            class=" bgimage z-1 h-auto w-[45rem] bg-transparent"
-            alt="Home img"
-          />
-        </div>
+		<div class="order-last bg-transparent lg:pl-48">
+			{
+				/* On Mobile, the image is at the top and the text is at the bottom. On Desktop, the image is on the right and the text is on the left. */
+			}
+			<img
+				src="/src/public/Envelope-amico.svg"
+				class="bgimage z-1 h-auto w-[45rem] bg-transparent"
+				alt="Home img"
+			/>
+		</div>
 
-        <div class="bg-transparent">
-          <h1 class=" lg:pt-30 intro m-auto py-10 text-4xl font-extrabold lg:pb-14 lg:text-6xl ">
-            Welcome to ACM Chronicles <span class="sparkles">✨</span>
-          </h1>
+		<div class="bg-transparent">
+			<h1
+				class="lg:pt-30 intro m-auto py-10 text-4xl font-extrabold lg:pb-14 lg:text-6xl"
+			>
+				Welcome to ACM Chronicles <span class="sparkles">✨</span>
+			</h1>
 
-          <a href="/Edition1" class=" text-2xl lg:py-10 lg:text-4xl">
-            <span class="a-underline a-underline-black groww intro inline-block">
-              Have a Look at our Latest Edition➚
-            </span>
-          </a>
+			<a href="/Edition1" class="text-2xl lg:py-10 lg:text-4xl">
+				<span
+					class="link-underline link-underline-black groww intro inline-block"
+				>
+					Have a Look at our Latest Edition➚
+				</span>
+			</a>
 
-          <h1 class=" intro py-14 text-xl font-light lg:py-10 lg:text-3xl">
-            Enjoyed reading that 👀? Consider Subscribing, we'll send out
-            monthly email intimations of our latest editions!
-          </h1>
+			<h1 class="intro py-14 text-xl font-light lg:py-10 lg:text-3xl">
+				Enjoyed reading that 👀? Consider Subscribing, we'll send out
+				monthly email intimations of our latest editions!
+			</h1>
 
-          <MyForm client:idle></MyForm>
-        </div>
-      </div>
-    </div>
+			<MyForm client:idle />
+		</div>
+	</div>
 </Layout>
