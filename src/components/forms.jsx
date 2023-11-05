@@ -55,7 +55,13 @@ export default function MyForm() {
 					{message}
 				</div>
 			) : (
-				<form method="post" className="intro" onSubmit={handleSubmit}>
+				<form
+					method="post"
+					className="intro"
+					onSubmit={handleSubmit}
+					name="contact"
+					netlify="true"
+				>
 					<input
 						type="email"
 						className="mb-5 min-w-[100%] border-0 border-b-2 border-slate-700 p-3 text-xl outline-none focus:ring-0 dark:bg-transparent lg:min-w-[10%] lg:text-3xl"
@@ -76,7 +82,7 @@ export default function MyForm() {
 					) : (
 						<button
 							disabled
-							type="button"
+							type="submit"
 							className={`animate-fade-up relative mb-2 mr-2 rounded-lg bg-blue-300 px-8 py-3 text-lg font-semibold text-black transition delay-100 hover:opacity-80 focus:outline-2 focus:ring-4 focus:ring-gray-300 `}
 						>
 							<svg
