@@ -1,16 +1,18 @@
+---
+import "../styles/globals.css"
+---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/../public/favicon.ico" />
-		<link rel="stylesheet" href="/../styles/globals.css" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
 		<div
-			class="sticky top-0 flex w-full items-center justify-between border-b-4 border-gray-400 bg-inherit p-10 text-base font-extrabold z-10"
+			class="sticky top-0 flex w-full items-center justify-between border-b-4 border-gray-400 bg-inherit p-5 text-base font-extrabold z-10"
 		>
 			<a
 				href="/"
@@ -28,19 +30,19 @@
 		</div>
 		<slot />
 		<div
-			class="sticky flex w-full items-center justify-between border-t-4 border-gray-400 p-10 text-base font-black"
+			class="sticky flex w-full items-center justify-between border-t-4 border-gray-400 p-5 text-base font-black"
 		>
 			<div
 				class="flex flex-row flex-wrap font-robotomono text-lg lg:text-3xl"
 			>
 				<a href="https://www.instagram.com/acm_mpstme/" target="_blank">
 					<img
-						src={"/../public/square-instagram.svg"}
+						src={"/square-instagram.svg"}
 						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
 					/>
 
 					<img
-						src={"/../public/instagramdark.svg"}
+						src={"/instagramdark.svg"}
 						class="groww hidden h-5 w-5 hover:outline-fuchsia-500 dark:block lg:h-10 lg:w-10"
 					/>
 				</a>
@@ -49,12 +51,12 @@
 
 				<a href="https://discord.gg/V8sgnZP3YU" target="_blank">
 					<img
-						src={"/../public/discord.svg"}
+						src={"/discord.svg"}
 						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
 					/>
 
 					<img
-						src={"/../public/discorddark.svg"}
+						src={"/discorddark.svg"}
 						class="groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
 					/>
 				</a>
@@ -66,12 +68,12 @@
 					target="_blank"
 				>
 					<img
-						src={"/../public/linkedin.svg"}
+						src={"/linkedin.svg"}
 						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
 					/>
 
 					<img
-						src={"/../public/linkedindark.svg"}
+						src={"/linkedindark.svg"}
 						class="groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
 					/>
 				</a>
@@ -80,12 +82,12 @@
 
 				<a href="https://github.com/acm-mpstme-tech" target="_blank">
 					<img
-						src={"/../public/square-github.svg"}
+						src={"/square-github.svg"}
 						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
 					/>
 
 					<img
-						src={"/../public/square-githubdark.svg"}
+						src={"/square-githubdark.svg"}
 						class="groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
 					/>
 				</a>

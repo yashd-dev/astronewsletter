@@ -72,7 +72,7 @@
 }
 
 .pre-article {
-	@apply intro relative flex flex-col justify-center overflow-hidden px-5 py-8 lg:px-8  lg:py-12;
+	@apply intro relative flex flex-col justify-center overflow-hidden px-5 pt-8 lg:px-8  lg:pt-12;
 }
 
 .article-intro {
