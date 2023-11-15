@@ -1,104 +1,105 @@
 ---
-import "../styles/globals.css"
+import "../styles/globals.css";
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-		<div
-			class="sticky top-0 flex w-full items-center justify-between border-b-4 border-gray-400 bg-inherit p-5 text-base font-extrabold z-10"
-		>
-			<a
-				href="/"
-				class="link-underline link-underline-black groww bg-inherit font-robotomono text-lg text-[#70acc7] lg:text-3xl"
-			>
-				ACM CHRONICLES
-			</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <div
+      class="dark:sticky dark:top-0 z-20 mx-auto mt-5 flex w-full max-w-[97%] md:max-w-[95%] items-center justify-between rounded-lg border-b-2 border-t-2 border-gray-400 dark:bg-[#181818] bg-opacity-70 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+    >
+      <a
+        href="/"
+        class="link-underline link-underline-black groww bg-transparent font-robotomono text-lg text-[#70acc7] lg:text-xl"
+      >
+        ACM CHRONICLES
+      </a>
 
-			<a
-				href="/Archive"
-				class="link-underline link-underline-black groww font-robotomono text-lg lg:text-3xl"
-			>
-				ARCHIVES
-			</a>
-		</div>
-		<slot />
-		<div
-			class="sticky flex w-full items-center justify-between border-t-4 border-gray-400 p-5 text-base font-black"
-		>
-			<div
-				class="flex flex-row flex-wrap font-robotomono text-lg lg:text-3xl"
-			>
-				<a href="https://www.instagram.com/acm_mpstme/" target="_blank">
-					<img
-						src={"/square-instagram.svg"}
-						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
-					/>
+      <a
+        href="/Archive"
+        class="link-underline link-underline-black bg-transparent groww font-robotomono text-lg lg:text-xl"
+      >
+        ARCHIVES
+      </a>
+    </div>
 
-					<img
-						src={"/instagramdark.svg"}
-						class="groww hidden h-5 w-5 hover:outline-fuchsia-500 dark:block lg:h-10 lg:w-10"
-					/>
-				</a>
+    <slot />
 
-				<div class="p-2 lg:p-4"></div>
+    <div
+      class="dark:sticky  mx-auto mb-5 flex w-full max-w-[97%] md:max-w-[95%] items-center justify-between rounded-lg border-b-2 border-t-2 border-gray-400 dark:bg-[#181818] bg-opacity-10 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+    >
+      <div class="flex flex-row flex-wrap font-robotomono text-lg lg:text-xl">
+        <a href="https://www.instagram.com/acm_mpstme/" target="_blank">
+          <img
+            src={"/square-instagram.svg"}
+            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
+          />
 
-				<a href="https://discord.gg/V8sgnZP3YU" target="_blank">
-					<img
-						src={"/discord.svg"}
-						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
-					/>
+          <img
+            src={"/instagramdark.svg"}
+            class="groww hidden h-5 w-5 hover:outline-fuchsia-500 dark:block lg:h-7 lg:w-7"
+          />
+        </a>
 
-					<img
-						src={"/discorddark.svg"}
-						class="groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
-					/>
-				</a>
+        <div class="p-2 lg:p-4"></div>
 
-				<div class="p-2 lg:p-4"></div>
+        <a href="https://discord.gg/V8sgnZP3YU" target="_blank">
+          <img
+            src={"/discord.svg"}
+            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
+          />
 
-				<a
-					href="https://www.linkedin.com/company/acm-nmims-mpstme/"
-					target="_blank"
-				>
-					<img
-						src={"/linkedin.svg"}
-						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
-					/>
+          <img
+            src={"/discorddark.svg"}
+            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+          />
+        </a>
 
-					<img
-						src={"/linkedindark.svg"}
-						class="groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
-					/>
-				</a>
+        <div class="p-2 lg:p-4"></div>
 
-				<div class="p-2 lg:p-4"></div>
+        <a
+          href="https://www.linkedin.com/company/acm-nmims-mpstme/"
+          target="_blank"
+        >
+          <img
+            src={"/linkedin.svg"}
+            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
+          />
 
-				<a href="https://github.com/acm-mpstme-tech" target="_blank">
-					<img
-						src={"/square-github.svg"}
-						class="groww h-5 w-5 dark:hidden lg:h-10 lg:w-10"
-					/>
+          <img
+            src={"/linkedindark.svg"}
+            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+          />
+        </a>
 
-					<img
-						src={"/square-githubdark.svg"}
-						class="groww hidden h-5 w-5 dark:block lg:h-10 lg:w-10"
-					/>
-				</a>
-			</div>
+        <div class="p-2 lg:p-4"></div>
 
-			<a
-				href="/About"
-				class="link-underline link-underline-black groww font-robotomono text-lg lg:text-3xl"
-			>
-				ABOUT US
-			</a>
-		</div>
-	</body>
+        <a href="https://github.com/acm-mpstme-tech" target="_blank">
+          <img
+            src={"/square-github.svg"}
+            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
+          />
+
+          <img
+            src={"/square-githubdark.svg"}
+            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+          />
+        </a>
+      </div>
+
+      <a
+        href="/About"
+        class="link-underline link-underline-black groww font-robotomono text-lg lg:text-xl"
+      >
+        ABOUT US
+      </a>
+    </div>
+  </body>
 </html>
