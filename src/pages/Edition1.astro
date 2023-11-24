@@ -1,20 +1,23 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import MyForm from "../components/forms";
-import Form from "../components/form.astro";
+import BlogLayout from "../layouts/BlogLayout.astro";
 ---
 
-<Layout>
+<BlogLayout>
   <div class="md:px-10">
-    <div class="pre-article">
-      <h1 class=" self-center text-xl">Edition 1</h1>
-      <img src="/Ed1-Title.jpg" class="article-cover-image" />
+    <div
+      class="intro relative flex flex-col justify-center overflow-hidden px-5 pt-8 lg:px-8 lg:pt-12"
+    >
+      <img
+        src="/Ed1-Title.jpg"
+        class="m-auto min-w-full rounded-3xl object-cover lg:h-[30rem]"
+      />
     </div>
     <div class="main-article">
       <p class="article-intro">
         Welcome to the first edition of ACM Chronicles for this year! We would
-        be discussing on Cryptography, Encryption, Smart Water-Bottles and so
-        much more!{" "}
+        talk on Cryptography, Encryption, Smart Water-Bottles and so much more!{
+          " "
+        }
       </p>
       <br />
       <h1>Table of content:</h1>
@@ -23,7 +26,7 @@ import Form from "../components/form.astro";
         <a href="#2">Quantum Cryptography</a>
         <a href="#3">Next Big Idea</a>
         <a href="#4">Recommendations And Reviews</a>
-        <a href="#4">What is ACM Upto!</a>
+        <a href="#5">What is ACM Upto!</a>
       </div>
       <h1 id="1" class="font-robotomono">
         Sneak Peak Into{" "}
@@ -31,7 +34,9 @@ import Form from "../components/form.astro";
           Cryptography 👀
         </div>
       </h1>
-      <p class="first-letter:text-7xl first-letter:font-bold">
+      <p
+        class="first-letter:text-5xl first-letter:font-bold md:first-letter:text-6xl"
+      >
         Cryptography, a word with Greek origins, means, “secret writing.” It is
         a technique of securing information and communications through codes so
         that only those people for whom the information is intended can
@@ -51,7 +56,12 @@ import Form from "../components/form.astro";
         sensitive corporate information. To unlock your phone, you must enter a
         password then it compares with the one stored in it. Without
         cryptography the password could be extracted from the storage of your
-        phone and then be used to open it.
+        phone and then be used to open it. Now there are many ways and
+        algorithms of encrypting data, but that uses complex mathematical
+        equations to make it secure. But for the sake of simplicity, we'll use
+        the example of Caesar Cipher. It is one of the simplest and most widely
+        known encryption techniques to start off our journey in the world of
+        encryption.
       </p>
       <figure class="flex flex-col items-center justify-center">
         <img
@@ -63,19 +73,18 @@ import Form from "../components/form.astro";
           Illustration for Caesar cipher
         </figcaption>
       </figure>
-      <blockquote>Lets Understanding Caesar Cipher</blockquote>
+      <blockquote>Lets Understand Caesar Cipher</blockquote>
       <p>
-        Let's understand is one of the simplest and most widely known encryption
-        techniques to start off our journey in the world of encryption. The way
-        this works is you take the text you want to encrypt and shift every
-        letter by a fixed number (let's call it K) of letters in the alphabet.
-        So, if your number K is 2, then A becomes C, B becomes D, C becomes E
-        etc. and Z cycles over and becomes B. The message ATTACK is encrypted to
-        DWWDFM. To decrypt, you simply shift the letters in the opposite
-        direction!
+        The way this works is you take the text you want to encrypt and shift
+        every letter by a fixed number (let's call it K) of letters in the
+        alphabet. So, if your number K is 2, then A becomes C, B becomes D, C
+        becomes E etc. and Z cycles over and becomes B. The message ATTACK, with
+        k=3 is encrypted to DWWDFM. To decrypt, you simply shift the letters in
+        the opposite direction! D shifted back by 3 positions becomes A, W
+        shifted becomes T and so on...
       </p>
       <blockquote>Can You decrypt the word qsc with K=10?</blockquote>
-      <h3>In general there are three types Of cryptography:</h3>
+      <h3>In general there are three types of cryptography:</h3>
       <ol class="[&>*]:pb-4">
         <li>
           Symmetric Key Cryptography: It is an encryption system where the
@@ -136,19 +145,22 @@ import Form from "../components/form.astro";
           the process and obtain the original input from the hash value. This
           property makes it useful for securely storing passwords and ensuring
           data integrity.
-          <br />
-          <br /> But this is also a problem as for the same input, the hash
-          function will always produce the same hash value. This means that if
-          two users have the same password, they will also have the same hash
-          value. This is a security risk, as it allows attackers to find users
-          with the same password. <br />
-           To overcome this problem, salt can be added to the input before
-          hashing. A salt is a random string of characters that is added to the
-          input of hash functions to produce unique hash values for the same
-          input. This makes it impossible for attackers to find users with the
-          same password.
         </li>
       </ol>
+      <p>
+        But this is also a problem as for the same input, the hash function will
+        always produce the same hash value. This means that if two users have
+        the same password, they will also have the same hash value. This is a
+        security risk, as it allows attackers to find users with the same
+        password.
+      </p>
+      <p>
+        To overcome this problem, salt can be added to the input before hashing.
+        A salt is a random string of characters that is added to the input of
+        hash functions to produce unique hash values for the same input. This
+        makes it impossible for attackers to find users with the same password.
+      </p>
+
       <h1 id="2">Understanding Quantum Cryptography 🤯</h1>
       <p>
         Have you ever heard of a computer that can do things regular computers
@@ -197,7 +209,7 @@ import Form from "../components/form.astro";
       <figure class="flex flex-col items-center justify-center">
         <img
           src="/Ed1-Top2.2.png"
-          alt="A Man Encrypting a File"
+          alt="Eve is eavesdropping on Alice and Bob's Conversation"
           class="max-w-full rounded-lg md:max-w-[40vw] lg:ml-5"
         />
         <figcaption class="flex items-center justify-center">
@@ -247,7 +259,7 @@ import Form from "../components/form.astro";
       <figure class="flex flex-col items-center justify-center">
         <img
           src="/Ed1-Top3.jpg"
-          alt="A Man Encrypting a File"
+          alt="A Human Filling Water Bottle"
           class="max-w-full rounded-lg md:max-w-[40vw] lg:ml-5"
         />
         <figcaption class="flex items-center justify-center">
@@ -280,7 +292,7 @@ import Form from "../components/form.astro";
         he is not drinking enough water.
       </p>
       <h1 id="4">Recommendations And Reviews 📚</h1>
-      <blockquote class="!text-3xl">
+      <blockquote class="!md:text-3xl !text-xl">
         <a href="roadmap.sh">roadmap.sh</a>
       </blockquote>
       <p>
@@ -302,7 +314,7 @@ import Form from "../components/form.astro";
       <figure class="flex flex-col items-center justify-center">
         <img
           src="/Ed1-Top4.png"
-          alt="A Man Encrypting a File"
+          alt="The Home Page of roadmap.sh"
           class="max-w-full rounded-lg md:max-w-[40vw] lg:ml-5"
         />
         <figcaption class="flex items-center justify-center">
@@ -312,11 +324,11 @@ import Form from "../components/form.astro";
       <blockquote>Some features of this site</blockquote>
       <ul class="[&>*]:py-2">
         <li>
-          Beginner to Expert Level:Site caters to individuals at different skill
-          levels, from beginners to experts. It provides guidance on how to
-          progress from one level to the next in your chosen field. Each roadmap
-          includes a detailed curriculum with various topics, subtopics, and
-          resources for each stage of learning.
+          Beginner to Expert Level: Site caters to individuals at different
+          skill levels, from beginners to experts. It provides guidance on how
+          to progress from one level to the next in your chosen field. Each
+          roadmap includes a detailed curriculum with various topics, subtopics,
+          and resources for each stage of learning.
         </li>
         <li>
           Open Source: The project is open source, which means that users can
@@ -326,7 +338,7 @@ import Form from "../components/form.astro";
           particular language or updating a existing roadmap.{" "}
           <a
             href="https://github.com/kamranahmedse/developer-roadmap/blob/master/contributing.md"
-            class="!text-xl"
+            class="!md:text-xl"
           >
             Learn How to Contribute ➚{" "}
           </a>
@@ -345,20 +357,49 @@ import Form from "../components/form.astro";
         </li>
       </ul>
       <figure class="flex flex-col items-center justify-center">
-        <img
-          src="/Ed1-Top4.3.png"
-          alt="A Man Encrypting a File"
-          class="max-w-full rounded-lg md:max-w-[40vw] lg:ml-5"
-        />
+        <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-2xl">
+          <img
+            src="/Ed1-Top4.3.png"
+            alt="An example roadmap"
+            class="min-w-full h-auto object-cover"
+          />
+        </div>
         <figcaption class="flex items-center justify-center">
-          An example roadmap
+          <a href="https://roadmap.sh/computer-science" class="px-1 !text-sm">
+            An example roadmap ➚{" "}
+          </a>{" "}
         </figcaption>
       </figure>
       <h1 id="5">What is ACM Upto! 🤔</h1>
-      <p>Should we put about pfe</p>
-      <p>Insert podcast ka link here</p>
+      <figure class="flex flex-col items-center justify-center">
+        <img
+          src="/Ed1-Top5.jpg"
+          alt="An example roadmap"
+          class="min-w-full object-cover rounded-2xl h-[20rem]"
+        />
+        <figcaption class="flex items-center justify-center">
+          One of Our Classrooms!
+        </figcaption>
+      </figure>
+      <p>
+        ACM MPSTME hosted an event called Programming For Everyone! It is a
+        thrilling annual event that took place from October 17th to 19th, 2023!
+        It is a comprehensive workshop on two of the most widely-used
+        programming languages, C++ and Python. These workshops covered
+        everything from the basics to advanced concepts, ensuring that
+        participants gained a strong foundation in both languages. What sets PFE
+        apart was its strong sense of community . This collaborative atmosphere
+        fostered not only technical skills but also communication and teamwork.
+        Overall the event was greatly successful!
+      </p>
+      <h1 id="#6">Listen to Our Latest Podcast!</h1>
+      <iframe
+        src="https://open.spotify.com/embed/episode/5n7TsCV34XO2Tyqmd5zqtr?utm_source=generator"
+        width="100%"
+        height="152"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
       {/* End Of Article */}
-      <MyForm client:load />
     </div>
   </div>
-</Layout>
+</BlogLayout>

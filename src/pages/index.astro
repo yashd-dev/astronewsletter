@@ -1,83 +1,155 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MyForm from "../components/forms";
+import Archivecards from "../components/archivecards.astro";
+// https://materialui.co/flatuicolors/
+const posties = [
+  {
+    title:
+      "UwU Quantum Computers, Much Fancy, Very Wow, So Cool, Such Elegance",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+    colour: "bg-chronicles-blue",
+  },
+  {
+    title:
+      "UwU Quantum Computers, Much Fancy, Very Wow, So Cool, Such Elegance",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+    colour: "bg-chronicles-red",
+  },
+  {
+    title:
+      "UwU Quantum Computers, Much Fancy, Very Wow, So Cool, Such Elegance",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+    colour: "bg-chronicles-purple",
+  },
+  {
+    title:
+      "UwU Quantum Computers, Much Fancy, Very Wow, So Cool, Such Elegance",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+    colour: "bg-chronicles-turquoise",
+  },
+  {
+    title:
+      "UwU Quantum Computers, Much Fancy, Very Wow, So Cool, Such Elegance",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+    colour: "bg-chronicles-yellow",
+  },
+  {
+    title:
+      "UwU Quantum Computers, Much Fancy, Very Wow, So Cool, Such Elegance",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+    colour: "bg-chronicles-orange",
+  },
+];
 ---
 
+<!-- <script>
+
+  import { annotate } from "https://unpkg.com/rough-notation?module";
+  const h = document.querySelector("#header");
+  const hAnnotation = annotate(h, {
+    type: "underline",
+    color: "blue",
+    strokeWidth: 1,
+    padding: [20, 20],
+    multiline: true,
+  });
+  hAnnotation.show();
+</script> -->
 <Layout>
   <div
-    class="relative m-auto min-h-screen w-full overflow-hidden bg-transparent px-8 py-8 lg:grid lg:grid-cols-2 lg:content-stretch lg:items-center lg:justify-between lg:py-10"
+    class="relative m-auto md:min-h-screen w-full overflow-hidden bg-transparent px-8 py-8 lg:grid lg:grid-cols-2 lg:content-stretch lg:items-center lg:justify-between lg:py-10"
   >
-    <div
-      class="animate-spin-slow absolute -right-1/4 top-64 hidden h-64 w-1/2 opacity-50 blur-[120px] filter dark:block"
-    >
-      {
-        /* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
-      }
-
-      <div class="relative z-0">
-        <div class="z-0 h-60 w-full rounded-full bg-blue-600"></div>
-        <div
-          class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-blue-700"
-        >
-        </div>
-        <div
-          class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-purple-600"
-        >
-        </div>
-      </div>
-    </div>
-    <div
-      class="animate-spin-slow absolute -left-1/2 top-64 hidden h-64 w-1/2 opacity-50 blur-[120px] filter dark:block"
-    >
-      {
-        /* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
-      }
-
-      <div class="relative z-0">
-        <div class="z-0 h-60 w-full rounded-full bg-blue-600"></div>
-        <div
-          class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-blue-700"
-        >
-        </div>
-        <div
-          class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-purple-600"
-        >
-        </div>
-      </div>
-    </div>
-
     <div class="order-last bg-transparent lg:pl-48">
       {
         /* On Mobile, the image is at the top and the text is at the bottom. On Desktop, the image is on the right and the text is on the left. */
       }
       <img
-        src="/Envelope-amico.svg"
-        class="bgimage z-1 h-auto w-[45rem] bg-transparent"
+        src="/cool.svg"
+        <img
+        src="/cool.svg"
+        class="bgimage m-auto top-2 w-full lg:w-[65%] bg-transparent overflow-clip lg:absolute"
         alt="Home img"
       />
     </div>
 
-    <div class="bg-transparent md:px-10">
+    <div class="bg-transparent md:px-10 leading-10">
       <h1
-        class="lg:pt-30 intro m-auto py-10 text-4xl font-extrabold lg:pb-14 lg:text-6xl"
+        class="lg:pt-30 intro py-10 lg:pb-14 text-3xl lg:text-5xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
       >
         Welcome to ACM Chronicles <span class="sparkles">✨</span>
       </h1>
 
-      <a href="/Edition1" class="text-2xl lg:py-10 lg:text-4xl">
-        <span
-          class="link-underline link-underline-black groww intro inline-block"
-        >
-          Have a Look at our Latest Edition➚
-        </span>
+      <a
+        href="/Edition1"
+        class="text-2xl lg:py-5 xl:text-4xl text-chronicles-primary hover:text-blue-200 lg:max-w-[20ch] groww intro inline-block bg-transparent px-2"
+      >
+        Have a Look at our Latest Edition➚
       </a>
 
-      <h1 class="intro py-14 text-xl font-light lg:py-10 lg:text-3xl">
-        Enjoyed reading that 👀? Consider Subscribing, we'll send out monthly
-        email intimations of our latest editions!
-      </h1>
-
-      <MyForm client:idle />
+      <div
+        class="intro mt-10 bg-chronicles-surface rounded-lg p-5 lg:max-w-[65ch] text-left"
+      >
+        <h1
+          class="intro text-lg md:text-2xl font-light lg:py-10 lg:text-3xl bg-transparent text-chronicles-primary"
+        >
+          Enjoyed reading that 👀? Consider Subscribing, we'll send out monthly
+          email intimations of our latest editions!
+        </h1>
+        <MyForm client:idle />
+      </div>
     </div>
   </div>
+  <img src="/wavie.svg" class="min-w-full z-50 sticky bg-transparent" />
+
+  <div
+    class="lg:-mt-32 z-50 sticky gap-12 mx-auto min-h-screen w-full  md:px-20 leading-10 bg-chronicles-surface m-auto px-8 py-8 lg:py-10"
+  >
+    <h1
+      class="lg:pt-30 intro py-10 lg:pb-14 text-4xl lg:text-5xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
+    >
+      Archives
+    </h1>
+    <section class="grid lg:grid-cols-3 gap-16 bg-transparent min-w-full">
+      {
+        posties.map((post) => (
+          <div
+            class={`relative flex max-w-[24rem] flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[8px_8px_0px_#000] ${post.colour}`}
+          >
+            <div class="rounded-tr-3xl rounded-tl-3xl rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
+              <img
+                src={post.img}
+                alt="ui/ux review check"
+                class="hover:scale-110 transition-all duration-500 ease-in-out"
+              />
+            </div>
+            <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
+              <h4 class="bg-transparent block font-sans text-xl antialiased font-bold font-mono text-black w-full">
+                {post.title}
+              </h4>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+    class="w-full h-[5vh] lg:h-[20vh] object-cover"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#231f20"
+      fill-opacity="1"
+      d="M0,192L48,170.7C96,149,192,107,288,112C384,117,480,171,576,186.7C672,203,768,181,864,149.3C960,117,1056,75,1152,74.7C1248,75,1344,117,1392,138.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+    ></path>
+  </svg>
 </Layout>

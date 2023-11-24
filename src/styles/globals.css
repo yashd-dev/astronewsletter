@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Paytone+One&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,24 +16,48 @@
 * {
   color: #1b1b1f;
   background-color: #f3f3f3;
-  font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    Outfit,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   scroll-behavior: smooth;
   @apply selection:bg-[rgb(174,198,207)] selection:text-blue-900;
+}
+
+.paytone {
+  font-family: "Paytone One", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   /* dark mode */
   * {
-    background: #181818;
+    background: #0f0d0e;
     /* background-image: url("/5488082.jpg"); */
-
     background-repeat: no-repeat;
     background-size: cover;
-    color: #ffffff;
-    font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
+    color: white;
+    font-family:
+      Outfit,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
     scroll-behavior: smooth;
     @apply selection:bg-[rgb(174,198,207)] selection:text-blue-900;
   }
@@ -59,15 +85,17 @@
   }
 }
 
-/* Main Article has common properties which i am combining here */
+/* Main Article has common properties which i am combining here, too lazy to put md before everything for PC responsive */
+
 .main-article {
-  @apply prose prose-slate mx-auto mt-8 dark:prose-invert lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-bold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-normal prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-6xl p-4;
+  color: white;
+  @apply prose prose-slate mx-auto mt-8 p-4 dark:prose-invert lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-light prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-6xl ;
 }
 
 /* Below is for mobile */
 @media only screen and (max-width: 600px) {
   .main-article {
-    @apply prose prose-slate mx-auto mt-8 dark:prose-invert lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-bold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-normal prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-7xl;
+    @apply prose prose-slate mx-auto mt-8 dark:prose-invert lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-light prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-7xl;
   }
 }
 
@@ -145,7 +173,9 @@ a {
   animation: intro 1s linear 200ms backwards;
 }
 .bgimage {
-  animation: intro 1s linear 200ms backwards, bouncey 5s linear infinite;
+  animation:
+    intro 1s linear 200ms backwards,
+    bouncey 5s linear infinite;
 }
 
 @keyframes wave-animation {

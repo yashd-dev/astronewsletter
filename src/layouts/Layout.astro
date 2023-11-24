@@ -1,5 +1,6 @@
 ---
 import "../styles/globals.css";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -10,17 +11,28 @@ import "../styles/globals.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
   </head>
   <body>
     <div
-      class="dark:sticky dark:top-0 z-20 mx-auto mt-5 flex w-full max-w-[97%] md:max-w-[95%] items-center justify-between rounded-lg border-b-2 border-t-2 border-gray-400 dark:bg-[#181818] bg-opacity-70 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+      class="dark:sticky top-0 z-40 mx-auto mt-5 flex w-full items-center justify-between rounded-lg border-b-2 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
     >
-      <a
-        href="/"
-        class="link-underline link-underline-black groww bg-transparent font-robotomono text-lg text-[#70acc7] lg:text-xl"
-      >
-        ACM CHRONICLES
-      </a>
+      <div class="flex gap-3">
+        <img src="/logo.png" class="w-12 lg:w-16 rounded-full" alt="" />
+        <div class="pt-2">
+          <a
+            href="/"
+            class="link-underline link-underline-black groww bg-transparent font-robotomono text-base md:text-lg text-chronicles-blue lg:text-xl"
+          >
+            ACM CHRONICLES
+          </a>
+          <p
+            class=" text-chronicles-subtletext text-sm md:text-md lg:text-lg font-light"
+          >
+            A Monthly Newsletter
+          </p>
+        </div>
+      </div>
 
       <a
         href="/Archive"
@@ -33,10 +45,16 @@ import "../styles/globals.css";
     <slot />
 
     <div
-      class="dark:sticky  mx-auto mb-5 flex w-full max-w-[97%] md:max-w-[95%] items-center justify-between rounded-lg border-b-2 border-t-2 border-gray-400 dark:bg-[#181818] bg-opacity-10 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+      class="dark:sticky mx-auto mb-5 flex w-full items-center justify-between bg-transparent p-5 text-base font-extrabold max-w-[95vw] md:max-w-7xl border-2 rounded-full"
     >
-      <div class="flex flex-row flex-wrap font-robotomono text-lg lg:text-xl">
-        <a href="https://www.instagram.com/acm_mpstme/" target="_blank">
+      <div
+        class="flex flex-row flex-wrap font-robotomono text-lg lg:text-xl md:gap-2"
+      >
+        <a
+          href="https://www.instagram.com/acm_mpstme/"
+          class="bg-transparent"
+          target="_blank"
+        >
           <img
             src={"/square-instagram.svg"}
             class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
@@ -44,13 +62,17 @@ import "../styles/globals.css";
 
           <img
             src={"/instagramdark.svg"}
-            class="groww hidden h-5 w-5 hover:outline-fuchsia-500 dark:block lg:h-7 lg:w-7"
+            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
           />
         </a>
 
         <div class="p-2 lg:p-4"></div>
 
-        <a href="https://discord.gg/V8sgnZP3YU" target="_blank">
+        <a
+          href="https://discord.gg/V8sgnZP3YU"
+          class="bg-transparent"
+          target="_blank"
+        >
           <img
             src={"/discord.svg"}
             class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
@@ -58,7 +80,7 @@ import "../styles/globals.css";
 
           <img
             src={"/discorddark.svg"}
-            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
           />
         </a>
 
@@ -66,6 +88,7 @@ import "../styles/globals.css";
 
         <a
           href="https://www.linkedin.com/company/acm-nmims-mpstme/"
+          class="bg-transparent"
           target="_blank"
         >
           <img
@@ -75,13 +98,17 @@ import "../styles/globals.css";
 
           <img
             src={"/linkedindark.svg"}
-            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
           />
         </a>
 
         <div class="p-2 lg:p-4"></div>
 
-        <a href="https://github.com/acm-mpstme-tech" target="_blank">
+        <a
+          href="https://github.com/acm-mpstme-tech"
+          class="bg-transparent"
+          target="_blank"
+        >
           <img
             src={"/square-github.svg"}
             class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
@@ -89,14 +116,14 @@ import "../styles/globals.css";
 
           <img
             src={"/square-githubdark.svg"}
-            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
           />
         </a>
       </div>
 
       <a
         href="/About"
-        class="link-underline link-underline-black groww font-robotomono text-lg lg:text-xl"
+        class="bg-transparent link-underline link-underline-black groww font-robotomono text-lg lg:text-2xl"
       >
         ABOUT US
       </a>
