@@ -89,7 +89,7 @@
 
 .main-article {
   color: white;
-  @apply prose prose-slate mx-auto mt-8 p-4 dark:prose-invert lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-light prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-6xl ;
+  @apply prose prose-slate mx-auto mt-8 p-4 dark:prose-invert lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-light prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-6xl;
 }
 
 /* Below is for mobile */
