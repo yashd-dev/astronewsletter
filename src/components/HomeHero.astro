@@ -1,0 +1,47 @@
+---
+import MyForm from "./forms";
+import { Img } from "astro-imagetools/components";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="relative m-auto md:min-h-screen w-full overflow-hidden bg-transparent px-8 py-8 lg:grid lg:grid-cols-2 lg:content-stretch lg:items-center lg:justify-between lg:py-10"
+>
+  <div class="order-last bg-transparent lg:pl-48">
+    {
+      /* On Mobile, the image is at the top and the text is at the bottom. On Desktop, the image is on the right and the text is on the left. */
+    }
+    <img
+      src="/HomeHeroImage.svg"
+      class="m-auto top-2 w-full lg:w-[min(100%,65rem)] bg-transparent overflow-clip lg:absolute"
+      alt="Home img"
+    />
+  </div>
+
+  <div class="bg-transparent md:px-10 leading-10">
+    <h1
+      class="lg:pt-30 intro py-10 lg:pb-14 text-3xl lg:text-5xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2 tracking-wide"
+    >
+      Welcome to ACM Chronicles <span class="sparkles">✨</span>
+    </h1>
+
+    <a
+      href="/Edition1"
+      class="text-2xl lg:py-5 xl:text-3xl text-chronicles-primary hover:text-blue-200 lg:max-w-[20ch] groww intro inline-block bg-transparent px-2"
+    >
+      Have a Look at our Latest Edition➚
+    </a>
+
+    <div
+      class="intro mt-10 bg-chronicles-surface rounded-lg p-5 lg:max-w-[65ch] text-left"
+    >
+      <h1
+        class="intro text-lg md:text-2xl font-light lg:py-10 lg:text-3xl bg-transparent text-chronicles-primary"
+      >
+        Enjoyed reading that 👀? Consider Subscribing, we'll send out monthly
+        email intimations of our latest editions!
+      </h1>
+      <MyForm client:idle />
+    </div>
+  </div>
+</div>

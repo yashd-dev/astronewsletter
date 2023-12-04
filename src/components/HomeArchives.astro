@@ -1,0 +1,153 @@
+---
+const posties = [
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+];
+const colours = [
+  "bg-chronicles-blue",
+  "bg-chronicles-red",
+  "bg-chronicles-purple",
+  "bg-chronicles-turquoise",
+  "bg-chronicles-yellow",
+  "bg-chronicles-orange",
+];
+let colourIndex = Math.floor(Math.random() * colours.length);
+
+const getRandomIndex = (() => {
+  // Create a copy of the colours array
+  const indexes = [...Array(colours.length).keys()];
+
+  // Initialize the currentIndex to the length of the indexes array
+  let currentIndex = indexes.length;
+
+  // Return a function that generates a random index from the indexes array
+  return () => {
+    // If the currentIndex reaches 0, reset it to the length of the indexes array
+    if (currentIndex === 0) {
+      currentIndex = indexes.length;
+    }
+
+    // Generate a random index between 0 and the currentIndex
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+
+    // Decrement the currentIndex
+    currentIndex--;
+
+    // Swap the values at the currentIndex and the randomIndex
+    const temp = indexes[currentIndex];
+    indexes[currentIndex] = indexes[randomIndex];
+    indexes[randomIndex] = temp;
+
+    // Return the random index
+    return indexes[currentIndex];
+  };
+})();
+//why is
+let tilt = "tilt-container";
+let liltcard = "tilt-card";
+---
+
+<div
+  class="lg:-mt-32 z-50 sticky gap-12 mx-auto min-h-screen w-full md:px-20 leading-10 bg-chronicles-surface m-auto px-8 py-8 lg:py-10"
+>
+  <h1
+    id="Archives"
+    class="lg:pt-30 intro py-10 lg:pb-14 text-4xl lg:text-5xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
+  >
+    Archives
+  </h1>
+  <section
+    class="grid sm:grid-cols-2 lg:grid-cols-3 gap-16 bg-transparent min-w-full"
+  >
+    {
+      posties.map((post) => {
+        colourIndex = getRandomIndex();
+        if (tilt == "tilt-container") {
+          tilt = "tilt-container-pos";
+        } else {
+          tilt = "tilt-container";
+        }
+        if (liltcard == "tilt-card") {
+          liltcard = "tilt-card-pos";
+        } else {
+          liltcard = "tilt-card";
+        }
+        return (
+          <a href="/Edition1" class={tilt}>
+            <div
+              class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111] ${colours[colourIndex]} border-8 border-slate-100 ${liltcard}`}
+            >
+              <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
+                <img src={post.img} alt="ui/ux review check" />
+              </div>
+              <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
+                <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-black w-full">
+                  {post.title}
+                </h4>
+              </div>
+            </div>
+          </a>
+        );
+      })
+    }
+  </section>
+</div>
+
+<style>
+  /* Add these styles to your custom CSS or style tag */
+  .tilt-container {
+    perspective: 1000px;
+    background: transparent;
+  }
+
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+
+  .tilt-card:hover {
+    transform: rotatey(-10deg);
+  }
+
+  .tilt-container-pos {
+    perspective: 1000px;
+    background: transparent;
+  }
+
+  .tilt-card-pos {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+
+  .tilt-card-pos:hover {
+    transform: rotatey(10deg);
+  }
+</style>

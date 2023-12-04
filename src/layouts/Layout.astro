@@ -7,15 +7,18 @@ import { ViewTransitions } from "astro:transitions";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=teko@1&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
+    
     <ViewTransitions />
   </head>
   <body>
     <div
-      class="dark:sticky top-0 z-40 mx-auto mt-5 flex w-full items-center justify-between rounded-lg border-b-2 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+      class="dark:sticky top-0 z-40 mx-auto flex w-full items-center justify-between rounded-lg border-b-2 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
     >
       <div class="flex gap-3">
         <img src="/logo.png" class="w-12 lg:w-16 rounded-full" alt="" />
@@ -35,7 +38,7 @@ import { ViewTransitions } from "astro:transitions";
       </div>
 
       <a
-        href="/Archive"
+        href="/#Archives"
         class="link-underline link-underline-black bg-transparent groww font-robotomono text-lg lg:text-xl"
       >
         ARCHIVES
