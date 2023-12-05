@@ -73,22 +73,40 @@ const getRandomIndex = (() => {
 //why is
 let tilt = "tilt-container";
 let liltcard = "tilt-card";
+
+import { useSanityClient } from "astro-sanity";
+
+const posts = await useSanityClient().fetch(
+  `*[_type == "post" && archived == false] | order(_updatedAt desc)`,
+);
+
+import imageUrlBuilder from "@sanity/image-url";
+import { Image } from "astro:assets";
+// Get a pre-configured url-builder from your sanity client
+const builder = imageUrlBuilder(useSanityClient());
+
+// Then we like to make a simple function like this that gives the
+// builder an image and returns the builder for you to specify additional
+// parameters:
+function urlFor(source) {
+  return String(builder.image(source));
+}
 ---
 
 <div
-  class="lg:-mt-32 z-50 sticky gap-12 mx-auto min-h-screen w-full md:px-20 leading-10 bg-chronicles-surface m-auto px-8 py-8 lg:py-10"
+  class="lg:-mt-32 z-50 sticky gap-12 mx-auto min-h-[70vh] w-full md:px-20 leading-10 bg-chronicles-surface m-auto px-8 py-8 lg:py-10"
 >
   <h1
     id="Archives"
-    class="lg:pt-30 intro py-10 lg:pb-14 text-4xl lg:text-5xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
+    class="lg:pt-30 intro py-10 lg:pb-14 text-5xl xl:text-6xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
   >
     Archives
   </h1>
   <section
-    class="grid sm:grid-cols-2 lg:grid-cols-3 gap-16 bg-transparent min-w-full"
+    class="grid sm:grid-cols-2 lg:grid-cols-3 gap-20 bg-transparent min-w-full"
   >
     {
-      posties.map((post) => {
+      posts.map((post) => {
         colourIndex = getRandomIndex();
         if (tilt == "tilt-container") {
           tilt = "tilt-container-pos";
@@ -100,17 +118,18 @@ let liltcard = "tilt-card";
         } else {
           liltcard = "tilt-card";
         }
+
         return (
-          <a href="/Edition1" class={tilt}>
+          <a href={`/posts/${post.slug.current}`} class={tilt}>
             <div
               class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111] ${colours[colourIndex]} border-8 border-slate-100 ${liltcard}`}
             >
               <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-                <img src={post.img} alt="ui/ux review check" />
+                <img src={urlFor(post.mainImage)} alt="ui/ux review check" />
               </div>
               <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
                 <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-black w-full">
-                  {post.title}
+                  {post.cardTitle}
                 </h4>
               </div>
             </div>
@@ -118,36 +137,91 @@ let liltcard = "tilt-card";
         );
       })
     }
+    {
+      posts.length == 2 && (
+        <div
+          class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
+        >
+          <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
+            <img
+              src="https://images.unsplash.com/photo-1588665343610-04dfd562e2e7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="ui/ux review check"
+            />
+          </div>
+          <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
+            <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full">
+              More Posts Comming Soon! Stay Tuned!{" "}
+            </h4>
+          </div>
+        </div>
+      )
+    }
+    {
+      posts.length == 1 && (
+        <>
+          <div
+            class={`relative flex md:max-w-sm flex-col h-fit rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
+          >
+            <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
+              <img
+                src="https://images.unsplash.com/photo-1588665343610-04dfd562e2e7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="ui/ux review check"
+              />
+            </div>
+            <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
+              <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full">
+                More Posts Comming Soon! Stay Tuned
+              </h4>
+            </div>
+          </div>
+          <div
+            class={`relative flex md:max-w-sm h-fit flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
+          >
+            <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full ">
+              <h1 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full pb-5">
+                Some Thoughts
+              </h1>
+
+              <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-2xl antialiased font-normal text-white w-full">
+                Ever realised how you are allways living in the past and
+                whenever you take a photo, you are capturing a moment that has
+                already passed?{" "}
+              </h4>
+            </div>
+          </div>
+        </>
+      )
+    }
   </section>
+
+  <style>
+    /* Add these styles to your custom CSS or style tag */
+    .tilt-container {
+      perspective: 1000px;
+      background: transparent;
+    }
+
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+
+    .tilt-card:hover {
+      transform: rotatey(-10deg);
+    }
+
+    .tilt-container-pos {
+      perspective: 1000px;
+      background: transparent;
+    }
+
+    .tilt-card-pos {
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+
+    .tilt-card-pos:hover {
+      transform: rotatey(10deg);
+    }
+  </style>
 </div>
-
-<style>
-  /* Add these styles to your custom CSS or style tag */
-  .tilt-container {
-    perspective: 1000px;
-    background: transparent;
-  }
-
-  .tilt-card {
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-  }
-
-  .tilt-card:hover {
-    transform: rotatey(-10deg);
-  }
-
-  .tilt-container-pos {
-    perspective: 1000px;
-    background: transparent;
-  }
-
-  .tilt-card-pos {
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-  }
-
-  .tilt-card-pos:hover {
-    transform: rotatey(10deg);
-  }
-</style>

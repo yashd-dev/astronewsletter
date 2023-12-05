@@ -1,0 +1,8 @@
+---
+import { sanityPortableText } from "../sanity/api";
+
+const { portableText } = Astro.props;
+
+---
+
+<Fragment set:html={sanityPortableText(portableText)} />

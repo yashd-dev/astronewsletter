@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
     >
       <!-- Gradients on the side -->
       <div
-        class="animate-spin-slow absolute -right-1/4 top-64 hidden h-80 w-1/2 opacity-50 blur-[120px] filter dark:block bg-transparent"
+        class="animate-spin-slow absolute -right-1/4 top-64 h-80 w-1/2 opacity-50 blur-[120px] filter block bg-transparent"
       >
         {
           /* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
@@ -28,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
       <div
-        class="animate-spin-slow absolute -left-1/2 top-64 hidden h-64 w-1/2 opacity-50 blur-[120px] filter dark:block"
+        class="animate-spin-slow absolute -left-1/2 top-64 h-64 w-1/2 opacity-50 blur-[120px] filter block"
       >
         {
           /* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
@@ -55,15 +55,15 @@ import Layout from "../layouts/Layout.astro";
         class="order-last h-auto w-[45rem] bgimage bg-transparent md:px-10"
       />{" "}
 
-      <div class="pb-10 md:px-10">
+      <div class="pb-10 md:px-10 bg-chronicles-surface opacity-100 rounded-xl p-4">
         <h1
-          class="lg:pt-30 intro py-10 lg:pb-14 text-4xl lg:text-5xl bg-transparent paytone text-[#f9f4da] font-bold uppercase lg:max-w-[20ch]"
+          class="lg:pt-30 intro py-10 lg:pb-14 text-4xl lg:text-5xl bg-inherit paytone text-[#f9f4da] font-bold uppercase lg:max-w-[20ch]"
         >
           About ACM MPSTME <span class="sparkles">✨</span>
         </h1>
 
         <h3
-          class="intro text-lg md:text-2xl sm:font-light font-medium lg:py-10 bg-transparent text-[#f9f4da]"
+          class="intro text-lg md:text-2xl sm:font-light font-medium lg:py-10 bg-inherit text-[#f9f4da]"
         >
           {" "}
            The ACM Student Chapter at MPSTME is a community empowering students

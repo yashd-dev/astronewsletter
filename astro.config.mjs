@@ -4,7 +4,20 @@ import react from "@astrojs/react";
 import { astroImageTools } from "astro-imagetools";
 import partytown from "@astrojs/partytown";
 
+import sanity from "astro-sanity";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), astroImageTools, partytown()]
+  integrations: [
+    tailwind(),
+    react(),
+    astroImageTools,
+    partytown(),
+    sanity({
+      projectId: "nl1sv0qh",
+      dataset: "production",
+      apiVersion: "2021-03-25",
+      useCdn: false,
+    }),
+  ],
 });

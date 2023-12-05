@@ -1,20 +1,57 @@
 ---
 import "../styles/globals.css";
-import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Primary Meta Tags -->
+    <title>A Monthly Newsletter By ACM MPSTME!</title>
+    <meta name="title" content="A Monthly Newsletter By ACM MPSTME!" />
+    <meta
+      name="description"
+      content="A Monthly Technical Newsletter Initiative By ACM MPSTME!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://newsletter.yashd.tech/" />
+    <meta property="og:title" content="A Monthly Newsletter By ACM MPSTME!" />
+    <meta
+      property="og:description"
+      content="A Monthly Technical Newsletter Initiative By ACM MPSTME!"
+    />
+    <meta
+      property="og:image"
+      content="https://newsletter.yashd.tech/preview.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://newsletter.yashd.tech/" />
+    <meta
+      property="twitter:title"
+      content="A Monthly Newsletter By ACM MPSTME!"
+    />
+    <meta
+      property="twitter:description"
+      content="A Monthly Technical Newsletter Initiative By ACM MPSTME!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://newsletter.yashd.tech/preview.png"
+    />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
-
-    <ViewTransitions />
   </head>
   <body>
     <div
-      class="dark:sticky top-0 z-40 mx-auto flex w-full items-center justify-between rounded-lg border-b-2 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+      class="sticky top-0 z-40 mx-auto flex w-full items-center justify-between border-b-2 p-5 text-base font-extrabold backdrop-blur-lg bg-opacity-10 backdrop-filter"
     >
       <div class="flex gap-3">
         <img src="/logo.png" class="w-12 lg:w-16 rounded-full" alt="" />
@@ -40,11 +77,11 @@ import { ViewTransitions } from "astro:transitions";
         ARCHIVES
       </a>
     </div>
-
+    
     <slot />
 
     <div
-      class="dark:sticky mx-auto mb-5 flex w-full items-center justify-between bg-transparent p-5 text-base font-extrabold max-w-[95vw] md:max-w-7xl border-2 rounded-full"
+      class="sticky mx-auto mb-5 flex w-full items-center justify-between bg-transparent p-5 text-base font-extrabold max-w-[95vw] md:max-w-7xl border-2 rounded-full"
     >
       <div
         class="flex flex-row flex-wrap font-robotomono text-lg lg:text-xl md:gap-2"
@@ -55,13 +92,8 @@ import { ViewTransitions } from "astro:transitions";
           target="_blank"
         >
           <img
-            src={"/square-instagram.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
             src={"/instagramdark.svg"}
-            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
+            class="groww h-7 w-7 lg:h-10 lg:w-10"
           />
         </a>
 
@@ -72,15 +104,7 @@ import { ViewTransitions } from "astro:transitions";
           class="bg-transparent"
           target="_blank"
         >
-          <img
-            src={"/discord.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
-            src={"/discorddark.svg"}
-            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
-          />
+          <img src={"/discorddark.svg"} class="groww h-7 w-7 lg:h-10 lg:w-10" />
         </a>
 
         <div class="p-2 lg:p-4"></div>
@@ -91,13 +115,8 @@ import { ViewTransitions } from "astro:transitions";
           target="_blank"
         >
           <img
-            src={"/linkedin.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
             src={"/linkedindark.svg"}
-            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
+            class="groww h-7 w-7 lg:h-10 lg:w-10"
           />
         </a>
 
@@ -109,13 +128,8 @@ import { ViewTransitions } from "astro:transitions";
           target="_blank"
         >
           <img
-            src={"/square-github.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
             src={"/square-githubdark.svg"}
-            class="groww hidden h-7 w-7 dark:block lg:h-10 lg:w-10"
+            class="groww h-7 w-7 lg:h-10 lg:w-10"
           />
         </a>
       </div>

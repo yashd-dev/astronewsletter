@@ -1,0 +1,142 @@
+---
+import ProgressBar from "../../components/progressbar";
+import PortableText from "../../components/PortableText.astro";
+import { useSanityClient } from "astro-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+
+const builder = imageUrlBuilder(useSanityClient());
+
+function urlFor(source) {
+  return String(builder.image(source));
+}
+
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await useSanityClient().fetch(`*[_type == "post"]`);
+
+  return posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug?.current || "",
+      },
+      props: { ...post },
+    };
+  });
+}
+
+//
+const {
+  topic1,
+  topic2,
+  topic3,
+  topic4,
+  topic5,
+  top1body,
+  top2body,
+  top4body,
+  top3body,
+  top5body,
+  spotify,
+  mainImage,
+  summary,
+  slug,
+} = Astro.props;
+---
+
+<BlogLayout>
+  <ProgressBar client:idle />
+  <div class="md:px-10">
+    <div
+      class="intro relative flex flex-col justify-center overflow-hidden px-5 pt-8 lg:px-8 lg:pt-12"
+    >
+      <img
+        src={urlFor(mainImage)}
+        class="m-auto min-w-full rounded-3xl object-cover lg:h-[30rem]"
+        transition:name={`${slug} img`}
+      />
+    </div>
+  </div>
+  <div class="main-article">
+    <p class="article-intro">
+      {summary}
+    </p>
+    <br />
+    <h1
+      class="!text-transparent !bg-clip-text !bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-300 via-fuchsia-600 to-orange-600"
+    >
+      Table of content:
+    </h1>
+    <div class="mb-20 grid grid-cols-2 gap-5">
+      <a href="#1">{topic1}</a>
+      {topic2 && <a href="#2">{topic2}</a>}
+      {topic3 && <a href="#3">{topic3}</a>}
+      <a href="#4">{topic4}</a>
+      {topic5 && <a href="#5">{topic5}</a>}
+    </div>
+    <!-- <PortableText portableText={body} /> -->
+    <h1
+      id="1"
+      class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
+    >
+      {topic1}
+    </h1>
+    <PortableText portableText={top1body} />
+
+    {
+      topic2 && (
+        <>
+          <h1
+            id="2"
+            class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
+          >
+            {topic2}
+          </h1>
+          <PortableText portableText={top2body} />
+        </>
+      )
+    }
+
+    {
+      topic3 && (
+        <>
+          <h1
+            id="3"
+            class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
+          >
+            {topic3}
+          </h1>
+          <PortableText portableText={top3body} />
+        </>
+      )
+    }
+
+    <h1
+      id="4"
+      class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
+    >
+      {topic4}
+    </h1>
+    <PortableText portableText={top4body} />
+
+    {
+      topic5 && (
+        <>
+          <h1
+            id="5"
+            class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
+          >
+            {topic5}
+          </h1>
+          <PortableText portableText={top5body} />
+        </>
+      )
+    }
+    <iframe
+      src={spotify}
+      width="100%"
+      height="152"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
+  </div>
+</BlogLayout>

@@ -18,7 +18,7 @@ export default {
           base: "#0f0d0e",
           surface: "#231f20",
           primary: "#f9f4da",
-          blue: "#3498DB",
+          blue: "#60A8CF",
           red: "#E74C3C",
           purple: "#9B59B6",
           turquoise: "#1ABC9C",
