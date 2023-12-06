@@ -17,7 +17,7 @@ export default defineConfig({
       projectId: "cql3n56o",
       dataset: "production",
       apiVersion: "2021-03-25",
-      useCdn: false,
+      useCdn: true,
     }),
   ],
 });
