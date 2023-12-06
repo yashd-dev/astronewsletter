@@ -63,7 +63,7 @@ export default function MyForm() {
         >
           <input
             type="email"
-            className="mb-5 max-w-full border-0 border-b-2 border-[#f9f4da] p-3 text-xl outline-none focus:ring-0 dark:bg-transparent md:max-w-[70%]  lg:text-3xl"
+            className="mb-5 max-w-full border-0 border-b-2 border-[#f9f4da] bg-transparent p-3 text-xl outline-none focus:ring-0 md:max-w-[70%]  lg:text-3xl"
             placeholder="john@example.com"
             ref={emailRef}
             required

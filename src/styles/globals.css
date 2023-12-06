@@ -15,9 +15,15 @@
   font-family: "JetBrains Mono";
   src: url("JetBrainsMono-VariableFont_wght.ttf");
 }
+.paytone {
+  font-family: "Teko", sans-serif;
+}
 * {
-  color: #1b1b1f;
-  background-color: #f3f3f3;
+  background: #0f0d0e;
+  /* background-image: url("/5488082.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
   font-family:
     Satoshi,
     system-ui,
@@ -32,41 +38,7 @@
     "Helvetica Neue",
     sans-serif;
   scroll-behavior: smooth;
-  @apply selection:bg-[rgb(174,198,207)] selection:text-blue-900;
-}
-
-.paytone {
-  font-family: "Teko", sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  /* dark mode */
-  * {
-    background: #0f0d0e;
-    /* background-image: url("/5488082.jpg"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    font-family:
-      Outfit,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-    scroll-behavior: smooth;
-    @apply selection:bg-[rgb(174,198,207)] selection:text-blue-900;
-  }
-}
-
-* {
-  @apply antialiased; /*Smoother Fonts*/
+  @apply antialiased selection:bg-[rgb(174,198,207)] selection:text-blue-900;
 }
 
 /* Large devices (laptops/desktop, 992px and up) */
@@ -91,13 +63,13 @@
 
 .main-article {
   color: white;
-  @apply prose prose-slate mx-auto mt-8 p-4 dark:prose-invert lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-light prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-6xl;
+  @apply prose prose-slate prose-invert mx-auto mt-8 p-4 lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-light prose-a:font-robotomono prose-a:decoration-chronicles-subtleblues prose-a:decoration-double prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-6xl;
 }
 
 /* Below is for mobile */
 @media only screen and (max-width: 600px) {
   .main-article {
-    @apply prose prose-slate mx-auto mt-8 dark:prose-invert lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-light prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-7xl;
+    @apply prose prose-slate prose-invert mx-auto mt-8 lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-normal prose-a:font-robotomono prose-a:decoration-chronicles-subtleblues  prose-a:decoration-wavy prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-7xl pl-5;
   }
 }
 
@@ -117,7 +89,7 @@
 .link-underline {
   border-bottom-width: 0;
   background-image: linear-gradient(transparent, transparent),
-    linear-gradient(#fff, #fff);
+    linear-gradient(#556c9b, #556c9b);
   background-size: 0 3px;
   background-position: 0 100%;
   background-repeat: no-repeat;
@@ -127,13 +99,6 @@
 .link-underline-black {
   background-image: linear-gradient(transparent, transparent),
     linear-gradient(rgb(147 197 253), rgb(147 197 253));
-}
-
-@media (prefers-color-scheme: dark) {
-  .link-underline {
-    background-image: linear-gradient(transparent, transparent),
-      linear-gradient(#556c9b, #556c9b);
-  }
 }
 
 .link-underline:hover {
@@ -261,4 +226,11 @@ a {
   100% {
     transform: rotate(360deg);
   }
+}
+.progress-bar {
+  position: fixed;
+  top: 1rem;
+  height: 10px;
+  background: #0055ff;
+  transform-origin: 0%;
 }

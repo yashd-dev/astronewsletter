@@ -1,8 +1,11 @@
 ---
 import BlogLayout from "../layouts/BlogLayout.astro";
+import ProgressBar from "../components/progressbar.jsx";
 ---
 
 <BlogLayout>
+  <ProgressBar client:load />
+
   <div class="md:px-10">
     <div
       class="intro relative flex flex-col justify-center overflow-hidden px-5 pt-8 lg:px-8 lg:pt-12"
