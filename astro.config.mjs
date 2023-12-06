@@ -14,7 +14,7 @@ export default defineConfig({
     astroImageTools,
     partytown(),
     sanity({
-      projectId: "nl1sv0qh",
+      projectId: "cql3n56o",
       dataset: "production",
       apiVersion: "2021-03-25",
       useCdn: false,

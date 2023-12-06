@@ -98,7 +98,7 @@ function urlFor(source) {
 >
   <h1
     id="Archives"
-    class="lg:pt-30 intro py-10 lg:pb-14 text-5xl xl:text-6xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
+    class="lg:pt-30 intro py-10 lg:pb-14 text-6xl md:text-5xl xl:text-6xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
   >
     Archives
   </h1>
@@ -125,10 +125,10 @@ function urlFor(source) {
               class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111] ${colours[colourIndex]} border-8 border-slate-100 ${liltcard}`}
             >
               <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-                <img src={urlFor(post.mainImage)} alt="ui/ux review check" />
+                <img src={urlFor(post.mainImage)} />
               </div>
               <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
-                <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-black w-full">
+                <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-xl antialiased font-black text-black w-full">
                   {post.cardTitle}
                 </h4>
               </div>
@@ -163,26 +163,27 @@ function urlFor(source) {
             class={`relative flex md:max-w-sm flex-col h-fit rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
           >
             <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-              <img
-                src="https://images.unsplash.com/photo-1588665343610-04dfd562e2e7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="ui/ux review check"
-              />
+              <img src="/questionMark.jpg" alt="ui/ux review check" />
             </div>
             <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
-              <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full">
+              <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-xl antialiased font-bold text-white w-full">
                 More Posts Comming Soon! Stay Tuned
               </h4>
             </div>
           </div>
           <div
-            class={`relative flex md:max-w-sm h-fit flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
+            id="deepThoughtsContainer"
+            class={`relative flex md:max-w-sm h-fit flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100  ${liltcard}`}
           >
             <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full ">
               <h1 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full pb-5">
                 Some Thoughts
               </h1>
 
-              <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-2xl antialiased font-normal text-white w-full">
+              <h4
+                id="thoughtText"
+                class="bg-transparent font-sans text-base sm:text-lg lg:text-2xl antialiased font-normal text-white w-full"
+              >
                 Ever realised how you are allways living in the past and
                 whenever you take a photo, you are capturing a moment that has
                 already passed?{" "}
@@ -224,4 +225,39 @@ function urlFor(source) {
       transform: rotatey(10deg);
     }
   </style>
+  <script>
+    const deepThoughts = [
+      "Ever realized how you are always living in the past and whenever you take a photo, you are capturing a moment that has already passed?",
+      "Imagine a world where robots can see and interpret the world just like humans. Fact: Computer vision technology is making this a reality!",
+      "Clicking again? Your on to something! Keep going!",
+      "In the vast expanse of cyberspace, there are digital highways carrying information at the speed of light. It's like magic, but it's the reality of fiber-optic communication.",
+      "Did you know that your smartphone has more computing power than the computers used for the Apollo 11 moon landing in 1969? Technology sure has come a long way!",
+      "Round and round, like a moth to a flickering flame. How long will you keep clicking?",
+      "Picture this: A world without passwords! Biometric authentication, like fingerprint and facial recognition, is making it happen.",
+      "The cloud is not actually in the sky. It's a network of servers that store and manage data. Your photos, documents, and more are floating somewhere in the digital realm.",
+      "Quantum computers, unlike classical computers, use quantum bits or qubits, which can exist in multiple states simultaneously. It's like having superpowers in the world of computing.",
+      "Did you know that the first computer programmer was a woman? Ada Lovelace, in the 19th century, wrote the first algorithm designed for implementation on Charles Babbage's analytical engine.",
+      "We live in an era where cars can drive themselves. Autonomous vehicles use sensors and algorithms to navigate the roads, revolutionizing transportation.",
+      "The Internet of Things (IoT) connects everyday devices to the internet, enabling them to send and receive data. Your fridge can now be part of the digital conversation!",
+      "Virtual Reality (VR) can transport you to different worlds without leaving your room. It's like having a passport to the digital universe.",
+      "Artificial Intelligence is not just a buzzword; it's shaping the future. From chatbots to smart assistants, AI is becoming an integral part of our daily lives.",
+      "Fact: The code that took the first humans to the moon was less powerful than your smartphone. It's a testament to human ingenuity and the rapid advancement of technology.",
+      "Imagine a world without Wi-Fi. It's hard to fathom, right? This wireless technology has become a fundamental part of our connected lives.",
+      "Fact: The world's first website went live on August 6, 1991. It was dedicated to information about the World Wide Web project and how to set up a server.",
+      "Encryption is like a digital lock that keeps your data safe. It's the reason you can send sensitive information over the internet without worries.",
+      "3D printing allows you to create physical objects from digital models. It's like bringing your imagination to life, layer by layer.",
+      "Blockchain technology, known for its role in cryptocurrencies, is a decentralized and secure way to record and verify transactions. It's changing the landscape of trust in digital interactions.",
+      "Fact: The term 'bug' in computer science originated in 1947 when a moth caused a malfunction in the Harvard Mark II computer. Debugging became a common term for fixing glitches.",
+      "As you click through these thoughts, remember that technology is a vast and ever-evolving landscape. Each click reveals a new facet of the digital world!",
+    ];
+
+    const container = document.getElementById("deepThoughtsContainer");
+    const thoughtText = document.getElementById("thoughtText");
+    let currentIndex = 0;
+
+    container.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % deepThoughts.length; //
+      thoughtText.textContent = deepThoughts[currentIndex];
+    });
+  </script>
 </div>

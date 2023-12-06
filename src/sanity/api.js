@@ -21,11 +21,16 @@ const customComponents = {
   types: {
     image: ({ value }) => {
       return `
-          <img
-            class="max-w-full rounded-lg md:max-h-[30vw] mx-auto"
-            src="${urlFor(value.asset).url()}"
-            alt="${value.alt}"
-          />
+          <figure>
+            <img
+              class="max-w-full rounded-lg md:max-h-[30vw] mx-auto"
+              src="${urlFor(value.asset).url()}"
+              alt="${value.alt}"
+            />
+            <figcaption class="flex items-center justify-center">${
+              value.caption
+            }</figcaption>
+          </figure>
       `;
     },
   },

@@ -58,16 +58,77 @@ const {
     </div>
   </div>
   <div class="main-article">
-    <p class="article-intro">
+    <p
+      class="article-intro !text-transparent !bg-clip-text !bg-gradient-to-br from-[#3494E6] to-[#EC6EAD]"
+    >
       {summary}
     </p>
     <br />
-    <h1
-      class="!text-transparent !bg-clip-text !bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-300 via-fuchsia-600 to-orange-600"
-    >
-      Table of content:
+    <h1 class="align-text-bottom">
+      <svg
+        width="70"
+        height="70"
+        class="hidden md:inline-block"
+        viewBox="0 0 200 200"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_116_139)">
+          <path
+            d="M100 0L105.94 94.0603L200 100L105.94 105.94L100 200L94.0603 105.94L0 100L94.0603 94.0603L100 0Z"
+            fill="url(#paint0_linear_116_139)"></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="paint0_linear_116_139"
+            x1="20.5"
+            y1="16"
+            x2="100"
+            y2="200"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#ACAAFF"></stop>
+            <stop offset="1" stop-color="#C0E8FF"></stop>
+          </linearGradient>
+          <clipPath id="clip0_116_139">
+            <rect width="200" height="200" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg>
+       Table of Contents
+      <svg
+        width="70"
+        height="70"
+        class="hidden md:inline-block"
+        viewBox="0 0 200 200"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_116_139)">
+          <path
+            d="M100 0L105.94 94.0603L200 100L105.94 105.94L100 200L94.0603 105.94L0 100L94.0603 94.0603L100 0Z"
+            fill="url(#paint0_linear_116_139)"></path>
+        </g>
+        <defs>
+          <linearGradient
+            id="paint0_linear_116_139"
+            x1="20.5"
+            y1="16"
+            x2="100"
+            y2="200"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#ACAAFF"></stop>
+            <stop offset="1" stop-color="#C0E8FF"></stop>
+          </linearGradient>
+          <clipPath id="clip0_116_139">
+            <rect width="200" height="200" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg>
     </h1>
-    <div class="mb-20 grid grid-cols-2 gap-5">
+
+    <div class="mb-10 grid md:grid-cols-2 gap-5">
       <a href="#1">{topic1}</a>
       {topic2 && <a href="#2">{topic2}</a>}
       {topic3 && <a href="#3">{topic3}</a>}
@@ -75,10 +136,7 @@ const {
       {topic5 && <a href="#5">{topic5}</a>}
     </div>
     <!-- <PortableText portableText={body} /> -->
-    <h1
-      id="1"
-      class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
-    >
+    <h1 id="1" class="!text-chronicles-blue">
       {topic1}
     </h1>
     <PortableText portableText={top1body} />
@@ -86,10 +144,7 @@ const {
     {
       topic2 && (
         <>
-          <h1
-            id="2"
-            class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
-          >
+          <h1 id="2" class="!text-chronicles-purple">
             {topic2}
           </h1>
           <PortableText portableText={top2body} />
@@ -100,10 +155,7 @@ const {
     {
       topic3 && (
         <>
-          <h1
-            id="3"
-            class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
-          >
+          <h1 id="3" class="!text-chronicles-red">
             {topic3}
           </h1>
           <PortableText portableText={top3body} />
@@ -111,10 +163,7 @@ const {
       )
     }
 
-    <h1
-      id="4"
-      class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
-    >
+    <h1 id="4" class="!text-chronicles-turquoise">
       {topic4}
     </h1>
     <PortableText portableText={top4body} />
@@ -122,10 +171,7 @@ const {
     {
       topic5 && (
         <>
-          <h1
-            id="5"
-            class="!text-transparent !bg-clip-text !bg-gradient-to-tr from-violet-500 to-orange-300"
-          >
+          <h1 id="5" class="!text-chronicles-blue">
             {topic5}
           </h1>
           <PortableText portableText={top5body} />
