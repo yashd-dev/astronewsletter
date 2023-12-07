@@ -9,7 +9,7 @@
 /* https://colorhunt.co/palette/ecf8f9068da97e1717e55807 */
 @font-face {
   font-family: "Teko";
-  src: url("Teko-Variable.ttf");
+  src: url("Teko.ttf");
 }
 @font-face {
   font-family: "JetBrains Mono";
@@ -69,7 +69,7 @@
 /* Below is for mobile */
 @media only screen and (max-width: 600px) {
   .main-article {
-    @apply prose prose-slate prose-invert mx-auto mt-8 lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-normal prose-a:font-robotomono prose-a:decoration-chronicles-subtleblues  prose-a:decoration-wavy prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-7xl pl-5;
+    @apply prose prose-slate prose-invert mx-auto mt-8 pl-5 lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-normal prose-a:font-robotomono  prose-a:decoration-chronicles-subtleblues prose-a:decoration-wavy prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-7xl;
   }
 }
 
