@@ -81,7 +81,6 @@ const posts = await useSanityClient().fetch(
 );
 
 import imageUrlBuilder from "@sanity/image-url";
-import { Image } from "astro:assets";
 // Get a pre-configured url-builder from your sanity client
 const builder = imageUrlBuilder(useSanityClient());
 
@@ -125,12 +124,16 @@ function urlFor(source) {
               class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111] ${colours[colourIndex]} border-8 border-slate-100 ${liltcard}`}
             >
               <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-                <img src={urlFor(post.mainImage)} />
+                <img
+                  src={urlFor(post.mainImage)}
+                  loading="lazy"
+                  alt={`Main Image for ${post.cardTitle}`}
+                />
               </div>
               <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
-                <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-xl antialiased font-black text-black w-full">
+                <h3 class="bg-transparent font-sans text-xl antialiased font-black text-black w-full">
                   {post.cardTitle}
-                </h4>
+                </h3>
               </div>
             </div>
           </a>
@@ -138,32 +141,35 @@ function urlFor(source) {
       })
     }
     {
-      posts.length == 2 && (
+      (posts.length == 2 ||
+        posts.length == null ||
+        (posts.length + 1) % 3 == 0) && (
         <div
           class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
         >
           <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
             <img
               src="https://images.unsplash.com/photo-1588665343610-04dfd562e2e7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="ui/ux review check"
+              loading="lazy"
+              alt="Question Mark"
             />
           </div>
           <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
             <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full">
-              More Posts Comming Soon! Stay Tuned!{" "}
+              More Posts Comming Soon! Stay Tuned!
             </h4>
           </div>
         </div>
       )
     }
     {
-      posts.length == 1 && (
+      (posts.length == 1 || (posts.length + 1) % 2 == 0) && (
         <>
           <div
             class={`relative flex md:max-w-sm flex-col h-fit rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
           >
             <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-              <img src="/questionMark.jpg" alt="ui/ux review check" />
+              <img src="/questionMark.jpg" alt="Question Mark" loading="lazy" />
             </div>
             <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
               <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-xl antialiased font-bold text-white w-full">

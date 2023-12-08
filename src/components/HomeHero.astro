@@ -11,11 +11,19 @@ import { Image } from "astro:assets";
     {
       /* On Mobile, the image is at the top and the text is at the bottom. On Desktop, the image is on the right and the text is on the left. */
     }
-    <img
-      src="/HomeHeroImage.svg"
-      class=" hidden md:block m-auto top-2 w-full lg:w-[min(100%,65rem)] bg-transparent overflow-clip lg:absolute"
-      alt="Home img"
-    />
+    <picture>
+      <source
+        media="”(max-width:767px)”
+        sizes='”1px"'
+        srcset="”data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        1w”
+      />
+      <img
+        src="/HomeHeroImage.svg"
+        class="hidden md:block m-auto top-2 w-full lg:w-[min(100%,65rem)] bg-transparent overflow-clip lg:absolute"
+        alt="Home img"
+      />
+    </picture>
   </div>
 
   <div class="bg-transparent md:px-10 leading-10">
@@ -35,12 +43,12 @@ import { Image } from "astro:assets";
     <div
       class="intro mt-10 bg-chronicles-surface rounded-lg p-5 lg:max-w-[65ch] text-left"
     >
-      <h1
+      <h2
         class="intro text-lg md:text-2xl font-light lg:py-10 lg:text-3xl bg-transparent text-chronicles-primary"
       >
         Enjoyed reading that 👀? Consider Subscribing, we'll send out monthly
         email intimations of our latest editions!
-      </h1>
+      </h2>
       <MyForm client:idle />
     </div>
   </div>

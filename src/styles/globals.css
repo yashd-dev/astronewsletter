@@ -5,17 +5,20 @@
 @font-face {
   font-family: "Satoshi";
   src: url("Satoshi-Variable.ttf");
+  font-display: swap;
 }
 /* https://colorhunt.co/palette/ecf8f9068da97e1717e55807 */
 @font-face {
   font-family: "Teko";
   src: url("Teko.ttf");
+  font-display: swap;
 }
 @font-face {
   font-family: "JetBrains Mono";
   src: url("JetBrainsMono-VariableFont_wght.ttf");
+  font-display: swap;
 }
-.paytone {
+h1 {
   font-family: "Teko", sans-serif;
 }
 * {
