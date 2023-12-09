@@ -1,5 +1,7 @@
 ---
 import "../styles/globals.css";
+import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -45,14 +47,24 @@ import "../styles/globals.css";
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="preload" as="image" href="/HomeHeroImage.svg" />
+
     <meta name="generator" content={Astro.generator} />
+
   </head>
   <body>
     <div
       class="sticky top-0 z-40 mx-auto flex w-full items-center justify-between border-b-2 p-5 text-base font-extrabold backdrop-blur-lg bg-opacity-10 backdrop-filter"
+      transition:persist
     >
       <div class="flex gap-3">
-        <img src="/logo.png" class="w-12 lg:w-16 rounded-full" alt="" />
+        <Image
+          src="/logo.png"
+          class="w-12 lg:w-16 rounded-full"
+          alt="Logo"
+          height="400"
+          width="400"
+        />
         <div class="pt-2">
           <a
             href="/"
@@ -76,10 +88,11 @@ import "../styles/globals.css";
       </a>
     </div>
 
-    <slot />
+    <slot/>
 
     <div
       class="sticky mx-auto mb-5 flex w-full items-center justify-between bg-transparent p-5 text-base font-extrabold max-w-[95vw] md:max-w-7xl border-2 rounded-full"
+      transition:persist
     >
       <div
         class="flex flex-row flex-wrap font-robotomono text-lg lg:text-xl md:gap-2"
@@ -89,10 +102,12 @@ import "../styles/globals.css";
           class="bg-transparent"
           target="_blank"
         >
-          <img
+          <Image
             src={"/instagramdark.svg"}
             class="groww h-7 w-7 lg:h-10 lg:w-10"
             alt="Instagram Logo"
+            height="400"
+            width="400"
             loading="lazy"
           />
         </a>
@@ -104,11 +119,13 @@ import "../styles/globals.css";
           class="bg-transparent"
           target="_blank"
         >
-          <img
+          <Image
             src={"/discorddark.svg"}
             class="groww h-7 w-7 lg:h-10 lg:w-10"
             alt="Discord Logo"
             loading="lazy"
+            height="400"
+            width="400"
           />
         </a>
 
@@ -119,10 +136,12 @@ import "../styles/globals.css";
           class="bg-transparent"
           target="_blank"
         >
-          <img
+          <Image
             src={"/linkedindark.svg"}
             alt="Linkedin Logo"
             loading="lazy"
+            height="400"
+            width="400"
             class="groww h-7 w-7 lg:h-10 lg:w-10"
           />
         </a>
@@ -134,9 +153,11 @@ import "../styles/globals.css";
           class="bg-transparent"
           target="_blank"
         >
-          <img
-            src={"square-githubdark.svg"}
+          <Image
+            src={"/square-githubdark.svg"}
             alt="Github Logo"
+            height="400"
+            width="400"
             loading="lazy"
             class="groww h-7 w-7 lg:h-10 lg:w-10"
           />

@@ -41,6 +41,8 @@ const colours = [
 ];
 let colourIndex = Math.floor(Math.random() * colours.length);
 
+import { Image } from "astro:assets";
+
 const getRandomIndex = (() => {
   // Create a copy of the colours array
   const indexes = [...Array(colours.length).keys()];
@@ -117,21 +119,24 @@ function urlFor(source) {
         } else {
           liltcard = "tilt-card";
         }
-
         return (
           <a href={`/posts/${post.slug.current}`} class={tilt}>
             <div
               class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111] ${colours[colourIndex]} border-8 border-slate-100 ${liltcard}`}
             >
               <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-                <img
+                <Image
                   src={urlFor(post.mainImage)}
+                  alt="Post Title"
+                  height="400"
+                  width="400"
                   loading="lazy"
-                  alt={`Main Image for ${post.cardTitle}`}
                 />
               </div>
               <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
-                <h3 class="bg-transparent font-sans text-xl antialiased font-black text-black w-full">
+                <h3
+                  class="bg-transparent font-sans text-xl antialiased font-black text-black w-full"
+                >
                   {post.cardTitle}
                 </h3>
               </div>
@@ -148,10 +153,12 @@ function urlFor(source) {
           class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
         >
           <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-            <img
-              src="https://images.unsplash.com/photo-1588665343610-04dfd562e2e7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            <Image
+              src="/questionMark.jpg"
+              alt="descriptive text"
+              width="400"
+              height="400"
               loading="lazy"
-              alt="Question Mark"
             />
           </div>
           <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
@@ -169,7 +176,13 @@ function urlFor(source) {
             class={`relative flex md:max-w-sm flex-col h-fit rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
           >
             <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
-              <img src="/questionMark.jpg" alt="Question Mark" loading="lazy" />
+              <Image
+                src="/questionMark.jpg"
+                alt="descriptive text"
+                width="400"
+                height="400"
+                loading="lazy"
+              />{" "}
             </div>
             <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
               <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-xl antialiased font-bold text-white w-full">
@@ -182,9 +195,9 @@ function urlFor(source) {
             class={`relative flex md:max-w-sm h-fit flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100  ${liltcard}`}
           >
             <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full select-none ">
-              <h1 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full pb-5">
+              <h2 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full pb-5">
                 Some Thoughts
-              </h1>
+              </h2>
 
               <h4
                 id="thoughtText"

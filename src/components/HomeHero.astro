@@ -11,18 +11,11 @@ import { Image } from "astro:assets";
     {
       /* On Mobile, the image is at the top and the text is at the bottom. On Desktop, the image is on the right and the text is on the left. */
     }
-    <picture>
-      <source
-        media="”(max-width:767px)”
-        sizes='”1px"'
-        srcset="”data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        1w”
-      />
-      <img
-        src="/HomeHeroImage.svg"
-        class="hidden md:block m-auto top-2 w-full lg:w-[min(100%,65rem)] bg-transparent overflow-clip lg:absolute"
-        alt="Home img"
-      />
+    <picture
+      class="hidden md:block m-auto top-2 w-full lg:w-[min(100%,65rem)] bg-transparent overflow-clip lg:absolute"
+    >
+      <source srcset="HomeHeroImage.svg" media="(min-width: 768px)" />
+      <img data-rel="570" fetchpriority="high" loading="eager" />
     </picture>
   </div>
 

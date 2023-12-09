@@ -1,6 +1,7 @@
 import { useSanityClient, groq } from "astro-sanity";
 import { portableTextToHtml } from "astro-sanity";
 import imageUrlBuilder from "@sanity/image-url";
+import { Image } from "astro:assets";
 
 export async function getFirstBlogPost() {
   const query = groq`*[_type == "post"][0]`; // Get the first post
@@ -22,11 +23,13 @@ const customComponents = {
     image: ({ value }) => {
       return `
           <figure>
-            <img
-              class="max-w-full rounded-lg md:max-h-[30vw] mx-auto"
-              src="${urlFor(value.asset).url()}"
-              alt="${value.alt}"
-            />
+                <Image
+                class="max-w-full rounded-lg md:max-h-[30vw] mx-auto"
+                src="${urlFor(value.asset).url()}"
+                alt="${value.alt}"
+                width=""
+                height=""
+              />
             <figcaption class="flex items-center justify-center">${
               value.caption
             }</figcaption>
