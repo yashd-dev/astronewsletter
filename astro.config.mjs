@@ -11,7 +11,7 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   site: "https://newsletter.yashd.tech",
-  integrations: [tailwind(), react(), astroImageTools, sanity({
+  integrations: [tailwind(), react(), astroImageTools,partytown(), sanity({
     projectId: "cql3n56o",
     dataset: "production",
     apiVersion: "2021-03-25",
