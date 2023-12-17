@@ -5,18 +5,18 @@
 @font-face {
   font-family: "Satoshi";
   src: url("Satoshi-Variable.ttf");
-  font-display: swap;
+  font-display: block;
 }
 /* https://colorhunt.co/palette/ecf8f9068da97e1717e55807 */
 @font-face {
   font-family: "Teko";
   src: url("Teko.ttf");
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "JetBrains Mono";
   src: url("JetBrainsMono-VariableFont_wght.ttf");
-  font-display: swap;
+  font-display: block;
 }
 h1 {
   font-family: "Teko", sans-serif;
@@ -66,7 +66,7 @@ h1 {
 
 .main-article {
   color: white;
-  @apply prose prose-slate prose-invert mx-auto mt-8 p-4 lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-light prose-a:font-robotomono prose-a:decoration-chronicles-subtleblues prose-a:decoration-double prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-6xl;
+  @apply prose prose-slate prose-invert mx-auto mt-8 p-4 lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-normal prose-a:font-robotomono prose-a:decoration-chronicles-subtleblues prose-a:decoration-double prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-6xl;
 }
 
 /* Below is for mobile */

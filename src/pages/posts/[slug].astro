@@ -10,9 +10,7 @@ const builder = imageUrlBuilder(useSanityClient());
 function urlFor(source) {
   return String(builder.image(source));
 }
-
 import BlogLayout from "../../layouts/BlogLayout.astro";
-import { fade } from "astro:transitions";
 
 export async function getStaticPaths() {
   const posts = await useSanityClient().fetch(`*[_type == "post"]`);
@@ -29,9 +27,7 @@ const post = await useSanityClient().fetch(
     slug,
   },
 );
-console.log(post.slug.current);
 ---
-
 <BlogLayout>
   <ProgressBar client:idle />
   <div class="md:px-10">
