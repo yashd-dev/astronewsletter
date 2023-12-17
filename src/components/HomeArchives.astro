@@ -1,0 +1,292 @@
+---
+const posties = [
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+  {
+    title: "Demystifying Cryptography, Encryption, and so much more!",
+    img: "/Ed1-Title.jpg",
+    link: "/Edition1",
+  },
+];
+const colours = [
+  "bg-chronicles-blue",
+  "bg-chronicles-red",
+  "bg-chronicles-purple",
+  "bg-chronicles-turquoise",
+  "bg-chronicles-yellow",
+  "bg-chronicles-orange",
+];
+let colourIndex = Math.floor(Math.random() * colours.length);
+
+import { Image } from "astro:assets";
+
+const getRandomIndex = (() => {
+  // Create a copy of the colours array
+  const indexes = [...Array(colours.length).keys()];
+
+  // Initialize the currentIndex to the length of the indexes array
+  let currentIndex = indexes.length;
+
+  // Return a function that generates a random index from the indexes array
+  return () => {
+    // If the currentIndex reaches 0, reset it to the length of the indexes array
+    if (currentIndex === 0) {
+      currentIndex = indexes.length;
+    }
+
+    // Generate a random index between 0 and the currentIndex
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+
+    // Decrement the currentIndex
+    currentIndex--;
+
+    // Swap the values at the currentIndex and the randomIndex
+    const temp = indexes[currentIndex];
+    indexes[currentIndex] = indexes[randomIndex];
+    indexes[randomIndex] = temp;
+
+    // Return the random index
+    return indexes[currentIndex];
+  };
+})();
+//why is
+let tilt = "tilt-container";
+let liltcard = "tilt-card";
+
+import { useSanityClient } from "astro-sanity";
+
+const posts = await useSanityClient().fetch(
+  `*[_type == "post" && archived == false] | order(_updatedAt desc)`,
+);
+
+import imageUrlBuilder from "@sanity/image-url";
+// Get a pre-configured url-builder from your sanity client
+const builder = imageUrlBuilder(useSanityClient());
+
+// Then we like to make a simple function like this that gives the
+// builder an image and returns the builder for you to specify additional
+// parameters:
+function urlFor(source) {
+  return String(builder.image(source));
+}
+---
+
+<div
+  class="lg:-mt-32 z-50 sticky gap-12 mx-auto min-h-[70vh] w-full md:px-20 leading-10 bg-chronicles-surface m-auto px-8 py-8 lg:py-10"
+>
+  <h1
+    id="Archives"
+    class="lg:pt-30 intro py-10 lg:pb-14 text-6xl md:text-5xl xl:text-6xl bg-transparent paytone text-chronicles-primary font-bold uppercase lg:max-w-[20ch] px-2"
+  >
+    Archives
+  </h1>
+  <section
+    class="grid sm:grid-cols-2 lg:grid-cols-3 gap-20 bg-transparent min-w-full"
+  >
+    {
+      posts.map((post) => {
+        colourIndex = getRandomIndex();
+        if (tilt == "tilt-container") {
+          tilt = "tilt-container-pos";
+        } else {
+          tilt = "tilt-container";
+        }
+        if (liltcard == "tilt-card") {
+          liltcard = "tilt-card-pos";
+        } else {
+          liltcard = "tilt-card";
+        }
+        return (
+          <a href={`/posts/${post.slug.current}`} class={tilt}>
+            <div
+              class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111] ${colours[colourIndex]} border-8 border-slate-100 ${liltcard}`}
+            >
+              <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
+                <Image
+                  src={urlFor(post.mainImage)}
+                  alt="Post Title"
+                  height="400"
+                  width="400"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
+                <h3 class="bg-transparent font-sans text-xl antialiased font-black text-black w-full">
+                  {post.cardTitle}
+                </h3>
+              </div>
+            </div>
+          </a>
+        );
+      })
+    }
+    {
+      (posts.length == 2 ||
+        posts.length == null ||
+        (posts.length + 1) % 3 == 0) && (
+        <div
+          class={`relative flex md:max-w-sm flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
+        >
+          <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
+            <Image
+              src="/questionMark.jpg"
+              alt="descriptive text"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
+            <h4 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full">
+              More Posts Comming Soon! Stay Tuned!
+            </h4>
+          </div>
+        </div>
+      )
+    }
+    {
+      (posts.length == 1 || (posts.length + 1) % 2 == 0) && (
+        <>
+          <div
+            class={`relative flex md:max-w-sm flex-col h-fit rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100 ${liltcard}`}
+          >
+            <div class="rounded-3xl relative m-0 overflow-hidden text-gray-700 bg-transparent shadow-none bg-clip-border max-h-[10rem] md:max-h-[17rem] lg:max-h-[15rem]">
+              <Image
+                src="/questionMark.jpg"
+                alt="descriptive text"
+                width="400"
+                height="400"
+                loading="lazy"
+              />{" "}
+            </div>
+            <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full">
+              <h4 class="bg-transparent font-sans text-base sm:text-lg lg:text-xl antialiased font-bold text-white w-full">
+                More Posts Comming Soon! Stay Tuned
+              </h4>
+            </div>
+          </div>
+          <div
+            id="deepThoughtsContainer"
+            class={`relative flex md:max-w-sm h-fit flex-col rounded-3xl text-gray-700 shadow-md p-6 bg-clip-padding drop-shadow-[16px_16px_0px_#111] md:drop-shadow-[32px_32px_0px_#111]  border-8 border-slate-100  ${liltcard}`}
+          >
+            <div class="p-2 pt-3 bg-transparent rounded-br-3xl rounded-bl-3xl w-full select-none ">
+              <h2 class="bg-transparent font-sans text-lg sm:text-xl lg:text-2xl antialiased font-bold text-white w-full pb-5">
+                Some Thoughts
+              </h2>
+
+              <h4
+                id="thoughtText"
+                class="bg-transparent font-sans text-base sm:text-lg lg:text-2xl antialiased font-normal text-white w-full"
+              >
+                Debugging: where even the best coders navigate the mysteries of
+                unexpected bugs and wonder, 'What on earth is going on here?'
+              </h4>
+            </div>
+          </div>
+        </>
+      )
+    }
+  </section>
+
+  <style>
+    /* Add these styles to your custom CSS or style tag */
+    .tilt-container {
+      perspective: 1000px;
+      background: transparent;
+    }
+
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+
+    .tilt-card:hover {
+      transform: rotatey(-10deg);
+    }
+
+    .tilt-container-pos {
+      perspective: 1000px;
+      background: transparent;
+    }
+
+    .tilt-card-pos {
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease;
+    }
+
+    .tilt-card-pos:hover {
+      transform: rotatey(10deg);
+    }
+  </style>
+  <script>
+    const deepThoughts = [
+      "As we navigate the binary pathways",
+
+      "A single email can travel farther than the distance from Earth to the moon and back... and still end up in someone's spam folder",
+
+      "Beware the glitching shadows, the whispers of corrupted code, for they hold the echoes of lost programs and the ghosts of unfinished dreams.",
+
+      "The internet weighs about 50 million tons, mostly cat memes and questionable cryptocurrency.",
+
+      "Remember, code traveler, you are not just navigating the machine, you are shaping it, one line at a time, one byte at a time, one lore at a time.",
+
+      "The world's most powerful computer is so fast, it can calculate how many grains of sand are on every beach on Earth... in the time it takes you to read this sentence.",
+
+      "Think you're just scrolling? Nah, you're steering the data streams, guiding the digital evolution, one click at a time.",
+
+      "A single Google search uses enough electricity to power a small home for 5 minutes. So be mindful of your search terms, unless you're powering your neighbours with cat videos.",
+
+      "The cursor, a lone explorer in the data wilderness, navigating forgotten files and abandoned programs, seeking lost treasures",
+
+      "The first email ever sent was  It's like the first cave painting, but for the digital age. Cryptic, yet somehow groundbreaking.",
+
+      "Lost in the labyrinthine server farms, where data dust motes dance in the cooling fans, we seek the hidden gateways, the forbidden lore of the machine",
+
+      "The cloud? It's not actually fluffy cotton candy, but a vast digital warehouse where all your secrets and embarrassing photos reside.",
+
+      "Charge on, digital pioneers! Conquer the blinking wilderness, tame the wild algorithms, and remember, the only limit is your creativity (and maybe your internet speed)",
+
+      "Technology is a double-edged sword, making our lives easier but also reminding us that robots are superior multitaskers and can probably fold your laundry while you watch cat videos.",
+
+      "Every bug squashed, every line debugged, a victory cry against the chaos, a testament to your digital prowess.",
+
+      "Your brain uses more energy Googling your ex than solving a Rubik's Cube. Guess love truly is a mental marathon.",
+
+      "P.S. Don't forget to water your virtual plants and check for rogue autocorrect gremlins. They're sneaky little buggers.",
+
+      "The internet is so vast, it has its own dark side. Just like the fridge light. Except instead of expired milk, you find conspiracy theories and questionable memes.",
+    ];
+
+    const container = document.getElementById("deepThoughtsContainer");
+    const thoughtText = document.getElementById("thoughtText");
+    let currentIndex = 0;
+
+    container.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % deepThoughts.length; //
+      thoughtText.textContent = deepThoughts[currentIndex];
+    });
+  </script>
+</div>

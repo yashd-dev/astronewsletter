@@ -1,29 +1,85 @@
 ---
 import "../styles/globals.css";
+import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Primary Meta Tags -->
+    <title>Chronicles | ACM MPSTME</title>
+    <meta name="title" content="A Monthly Newsletter By ACM MPSTME!" />
+    <meta
+      name="description"
+      content="A Monthly Technical Newsletter By ACM MPSTME!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://newsletter.yashd.tech/" />
+    <meta property="og:title" content="Chronicles | ACM MPSTME" />
+    <meta
+      property="og:description"
+      content="A Monthly Newsletter By ACM MPSTME!"
+    />
+    <meta
+      property="og:image"
+      content="https://newsletter.yashd.tech/preview.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://newsletter.yashd.tech/" />
+    <meta property="twitter:title" content="Chronicles | ACM MPSTME" />
+    <meta
+      property="twitter:description"
+      content="A Monthly Newsletter By ACM MPSTME!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://newsletter.yashd.tech/preview.png"
+    />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+
     <meta name="generator" content={Astro.generator} />
   </head>
   <body>
     <div
-      class="dark:sticky dark:top-0 z-20 mx-auto mt-5 flex w-full max-w-[97%] md:max-w-[95%] items-center justify-between rounded-lg border-b-2 border-t-2 border-gray-400 dark:bg-[#181818] bg-opacity-70 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+      class="sticky top-0 z-40 mx-auto flex w-full items-center justify-between border-b-2 p-5 text-base font-extrabold backdrop-blur-lg bg-opacity-10 backdrop-filter"
+      transition:persist
     >
-      <a
-        href="/"
-        class="link-underline link-underline-black groww bg-transparent font-robotomono text-lg text-[#70acc7] lg:text-xl"
-      >
-        ACM CHRONICLES
-      </a>
+      <div class="flex gap-3">
+        <Image
+          src="/logo.png"
+          class="w-12 lg:w-16 rounded-full"
+          alt="Logo"
+          height="400"
+          width="400"
+        />
+        <div class="pt-2">
+          <a
+            href="/"
+            class="link-underline link-underline-black groww bg-transparent font-robotomono text-base md:text-lg text-chronicles-blue lg:text-xl"
+          >
+            ACM CHRONICLES
+          </a>
+          <p
+            class="text-chronicles-subtletext text-sm md:text-md lg:text-lg font-light"
+          >
+            A Monthly Newsletter
+          </p>
+        </div>
+      </div>
 
       <a
-        href="/Archive"
+        href="/#Archives"
         class="link-underline link-underline-black bg-transparent groww font-robotomono text-lg lg:text-xl"
       >
         ARCHIVES
@@ -33,32 +89,40 @@ import "../styles/globals.css";
     <slot />
 
     <div
-      class="dark:sticky  mx-auto mb-5 flex w-full max-w-[97%] md:max-w-[95%] items-center justify-between rounded-lg border-b-2 border-t-2 border-gray-400 dark:bg-[#181818] bg-opacity-10 p-5 text-base font-extrabold backdrop-blur-lg backdrop-filter"
+      class="sticky mx-auto mb-5 flex w-full items-center justify-between bg-transparent p-5 text-base font-extrabold max-w-[95vw] md:max-w-7xl border-2 rounded-full"
     >
-      <div class="flex flex-row flex-wrap font-robotomono text-lg lg:text-xl">
-        <a href="https://www.instagram.com/acm_mpstme/" target="_blank">
-          <img
-            src={"/square-instagram.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
+      <div
+        class="flex flex-row flex-wrap font-robotomono text-lg lg:text-xl md:gap-2"
+      >
+        <a
+          href="https://www.instagram.com/acm_mpstme/"
+          class="bg-transparent"
+          target="_blank"
+        >
+          <Image
             src={"/instagramdark.svg"}
-            class="groww hidden h-5 w-5 hover:outline-fuchsia-500 dark:block lg:h-7 lg:w-7"
+            class="groww h-7 w-7 lg:h-10 lg:w-10"
+            alt="Instagram Logo"
+            height="400"
+            width="400"
+            loading="lazy"
           />
         </a>
 
         <div class="p-2 lg:p-4"></div>
 
-        <a href="https://discord.gg/V8sgnZP3YU" target="_blank">
-          <img
-            src={"/discord.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
+        <a
+          href="https://discord.gg/V8sgnZP3YU"
+          class="bg-transparent"
+          target="_blank"
+        >
+          <Image
             src={"/discorddark.svg"}
-            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+            class="groww h-7 w-7 lg:h-10 lg:w-10"
+            alt="Discord Logo"
+            loading="lazy"
+            height="400"
+            width="400"
           />
         </a>
 
@@ -66,37 +130,40 @@ import "../styles/globals.css";
 
         <a
           href="https://www.linkedin.com/company/acm-nmims-mpstme/"
+          class="bg-transparent"
           target="_blank"
         >
-          <img
-            src={"/linkedin.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
+          <Image
             src={"/linkedindark.svg"}
-            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+            alt="Linkedin Logo"
+            loading="lazy"
+            height="400"
+            width="400"
+            class="groww h-7 w-7 lg:h-10 lg:w-10"
           />
         </a>
 
         <div class="p-2 lg:p-4"></div>
 
-        <a href="https://github.com/acm-mpstme-tech" target="_blank">
-          <img
-            src={"/square-github.svg"}
-            class="groww h-5 w-5 dark:hidden lg:h-7 lg:w-7"
-          />
-
-          <img
+        <a
+          href="https://github.com/acm-mpstme-tech"
+          class="bg-transparent"
+          target="_blank"
+        >
+          <Image
             src={"/square-githubdark.svg"}
-            class="groww hidden h-5 w-5 dark:block lg:h-7 lg:w-7"
+            alt="Github Logo"
+            height="400"
+            width="400"
+            loading="lazy"
+            class="groww h-7 w-7 lg:h-10 lg:w-10"
           />
         </a>
       </div>
 
       <a
         href="/About"
-        class="link-underline link-underline-black groww font-robotomono text-lg lg:text-xl"
+        class="bg-transparent link-underline link-underline-black groww font-robotomono text-lg lg:text-2xl"
       >
         ABOUT US
       </a>

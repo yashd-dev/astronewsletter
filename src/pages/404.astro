@@ -3,11 +3,18 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="min-h-screen max-w-full">
-    <div
-      class="max-w-[70ch] flex flex-col md:flex-row mx-auto justify-center items-center"
+  <div
+    class="flex flex-col items-center justify-center text-center my-auto min-h-[80vh]"
+  >
+    <h1 class="text-8xl font-bold mb-4">404 🤖</h1>
+    <p class="text-2xl text-gray-600 mb-8">
+      Oops! Page not found. Looks like your lost!
+    </p>
+    <a
+      href="/"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
     >
-      <h1 class="min-w-[50ch]">Oops Page not found, Return Back to Home</h1>
-    </div>
+      Go back to home
+    </a>
   </div>
 </Layout>

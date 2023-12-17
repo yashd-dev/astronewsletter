@@ -1,0 +1,25 @@
+---
+import Layout from "./Layout.astro";
+import MyForm from "../components/forms";
+---
+
+<Layout>
+  <div class="md:px-10">
+    <slot />
+    <div
+      class="main-article flex flex-col content-start justify-start gap-0 overflow-hidden px-5 mb-10 lg:px-0"
+    >
+      <div
+        class="mt-10 bg-chronicles-surface rounded-lg p-5 flex-auto justify-center items-center m-auto h-fit"
+      >
+        <p
+          class="intro text-xl md:text-2xl font-light lg:text-3xl bg-transparent text-chronicles-primary text-center self-center"
+        >
+          Enjoyed reading that 👀 ? Consider Subscribing, we'll send out monthly
+          email intimations of our latest editions!
+        </p>
+        <MyForm client:idle />
+      </div>
+    </div>
+  </div>
+</Layout>

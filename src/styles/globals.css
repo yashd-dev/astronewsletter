@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,37 +5,43 @@
 @font-face {
   font-family: "Satoshi";
   src: url("Satoshi-Variable.ttf");
+  font-display: block;
 }
 /* https://colorhunt.co/palette/ecf8f9068da97e1717e55807 */
-
+@font-face {
+  font-family: "Teko";
+  src: url("Teko.ttf");
+  font-display: block;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("JetBrainsMono-VariableFont_wght.ttf");
+  font-display: block;
+}
+h1 {
+  font-family: "Teko", sans-serif;
+}
 * {
-  color: #1b1b1f;
-  background-color: #f3f3f3;
-  font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #0f0d0e;
+  /* background-image: url("/5488082.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family:
+    Satoshi,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   scroll-behavior: smooth;
-  @apply selection:bg-[rgb(174,198,207)] selection:text-blue-900;
-}
-
-@media (prefers-color-scheme: dark) {
-  /* dark mode */
-  * {
-    background: #181818;
-    /* background-image: url("/5488082.jpg"); */
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #ffffff;
-    font-family: Satoshi, system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-      "Helvetica Neue", sans-serif;
-    scroll-behavior: smooth;
-    @apply selection:bg-[rgb(174,198,207)] selection:text-blue-900;
-  }
-}
-
-* {
-  @apply antialiased; /*Smoother Fonts*/
+  @apply antialiased selection:bg-[rgb(174,198,207)] selection:text-blue-900;
 }
 
 /* Large devices (laptops/desktop, 992px and up) */
@@ -59,15 +62,17 @@
   }
 }
 
-/* Main Article has common properties which i am combining here */
+/* Main Article has common properties which i am combining here, too lazy to put md before everything for PC responsive */
+
 .main-article {
-  @apply prose prose-slate mx-auto mt-8 dark:prose-invert lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-bold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-normal prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-6xl p-4;
+  color: white;
+  @apply prose prose-slate prose-invert mx-auto mt-8 p-4 lg:prose-xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-3xl prose-h3:underline prose-p:font-normal prose-a:font-robotomono prose-a:decoration-chronicles-subtleblues prose-a:decoration-double prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-6xl;
 }
 
 /* Below is for mobile */
 @media only screen and (max-width: 600px) {
   .main-article {
-    @apply prose prose-slate mx-auto mt-8 dark:prose-invert lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-bold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-normal prose-a:font-robotomono prose-blockquote:border-slate-300 lg:prose-h1:text-7xl;
+    @apply prose prose-slate prose-invert mx-auto mt-8 pl-5 lg:prose-2xl prose-headings:py-3 prose-headings:font-robotomono prose-headings:font-extrabold prose-headings:leading-9 prose-h1:text-4xl prose-h3:underline prose-p:text-lg prose-p:font-normal prose-a:font-robotomono  prose-a:decoration-chronicles-subtleblues prose-a:decoration-wavy prose-blockquote:border-slate-300 prose-li:py-4 lg:prose-h1:text-7xl;
   }
 }
 
@@ -87,7 +92,7 @@
 .link-underline {
   border-bottom-width: 0;
   background-image: linear-gradient(transparent, transparent),
-    linear-gradient(#fff, #fff);
+    linear-gradient(#556c9b, #556c9b);
   background-size: 0 3px;
   background-position: 0 100%;
   background-repeat: no-repeat;
@@ -97,13 +102,6 @@
 .link-underline-black {
   background-image: linear-gradient(transparent, transparent),
     linear-gradient(rgb(147 197 253), rgb(147 197 253));
-}
-
-@media (prefers-color-scheme: dark) {
-  .link-underline {
-    background-image: linear-gradient(transparent, transparent),
-      linear-gradient(#556c9b, #556c9b);
-  }
 }
 
 .link-underline:hover {
@@ -145,7 +143,9 @@ a {
   animation: intro 1s linear 200ms backwards;
 }
 .bgimage {
-  animation: intro 1s linear 200ms backwards, bouncey 5s linear infinite;
+  animation:
+    intro 1s linear 200ms backwards,
+    bouncey 5s linear infinite;
 }
 
 @keyframes wave-animation {
@@ -229,4 +229,11 @@ a {
   100% {
     transform: rotate(360deg);
   }
+}
+.progress-bar {
+  position: fixed;
+  top: 1rem;
+  height: 10px;
+  background: #0055ff;
+  transform-origin: 0%;
 }

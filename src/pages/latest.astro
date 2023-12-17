@@ -1,0 +1,25 @@
+---
+import { useSanityClient } from "astro-sanity";
+const latestSlug = await useSanityClient().fetch(
+  `*[_type == "post" && archived == false] | order(publishedAt desc)[0].slug.current`,
+);
+---
+
+<!doctype html>
+<html style="background-color: #111;" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content={`0; url="/posts/${latestSlug}"`} />
+    <title>Chronicles | ACM MPSTME</title>
+    <script define:vars={{ latestSlug }}>
+      window.onload = function () {
+        window.location.href = `/posts/${latestSlug}`;
+      };
+
+      function redirectToNgrok() {
+        window.location.href = `/posts/${latestSlug}`;
+      }
+    </script>
+  </head>
+</html>

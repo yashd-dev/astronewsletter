@@ -1,83 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import MyForm from "../components/forms";
+import HomeHero from "../components/HomeHero.astro";
+import HomeArchives from "../components/HomeArchives.astro";
+// https://materialui.co/flatuicolors/
 ---
 
 <Layout>
-  <div
-    class="relative m-auto min-h-screen w-full overflow-hidden bg-transparent px-8 py-8 lg:grid lg:grid-cols-2 lg:content-stretch lg:items-center lg:justify-between lg:py-10"
+  <HomeHero />
+  <img
+    src="/wavie.svg"
+    alt="A Divider wave SVG"
+    class="min-w-full z-50 sticky bg-transparent"
+  />
+
+  <HomeArchives />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+    class="w-full h-[5vh] lg:h-[20vh] object-cover"
+    preserveAspectRatio="none"
   >
-    <div
-      class="animate-spin-slow absolute -right-1/4 top-64 hidden h-64 w-1/2 opacity-50 blur-[120px] filter dark:block"
-    >
-      {
-        /* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
-      }
-
-      <div class="relative z-0">
-        <div class="z-0 h-60 w-full rounded-full bg-blue-600"></div>
-        <div
-          class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-blue-700"
-        >
-        </div>
-        <div
-          class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-purple-600"
-        >
-        </div>
-      </div>
-    </div>
-    <div
-      class="animate-spin-slow absolute -left-1/2 top-64 hidden h-64 w-1/2 opacity-50 blur-[120px] filter dark:block"
-    >
-      {
-        /* dont ask why and how it gradient works, it works. inspiration: https://codecrafters.io/ */
-      }
-
-      <div class="relative z-0">
-        <div class="z-0 h-60 w-full rounded-full bg-blue-600"></div>
-        <div
-          class="absolute -left-24 bottom-24 z-0 h-60 w-full rounded-full bg-blue-700"
-        >
-        </div>
-        <div
-          class="absolute left-24 top-24 z-0 h-60 w-full rounded-full bg-purple-600"
-        >
-        </div>
-      </div>
-    </div>
-
-    <div class="order-last bg-transparent lg:pl-48">
-      {
-        /* On Mobile, the image is at the top and the text is at the bottom. On Desktop, the image is on the right and the text is on the left. */
-      }
-      <img
-        src="/Envelope-amico.svg"
-        class="bgimage z-1 h-auto w-[45rem] bg-transparent"
-        alt="Home img"
-      />
-    </div>
-
-    <div class="bg-transparent md:px-10">
-      <h1
-        class="lg:pt-30 intro m-auto py-10 text-4xl font-extrabold lg:pb-14 lg:text-6xl"
-      >
-        Welcome to ACM Chronicles <span class="sparkles">✨</span>
-      </h1>
-
-      <a href="/Edition1" class="text-2xl lg:py-10 lg:text-4xl">
-        <span
-          class="link-underline link-underline-black groww intro inline-block"
-        >
-          Have a Look at our Latest Edition➚
-        </span>
-      </a>
-
-      <h1 class="intro py-14 text-xl font-light lg:py-10 lg:text-3xl">
-        Enjoyed reading that 👀? Consider Subscribing, we'll send out monthly
-        email intimations of our latest editions!
-      </h1>
-
-      <MyForm client:idle />
-    </div>
-  </div>
+    <path
+      fill="#231f20"
+      fill-opacity="1"
+      d="M0,192L48,170.7C96,149,192,107,288,112C384,117,480,171,576,186.7C672,203,768,181,864,149.3C960,117,1056,75,1152,74.7C1248,75,1344,117,1392,138.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+    ></path>
+  </svg>
 </Layout>

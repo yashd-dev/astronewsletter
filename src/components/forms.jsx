@@ -49,33 +49,32 @@ export default function MyForm() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center bg-transparent md:flex-row">
       {formStatus === "success" || formStatus === "error" ? (
-        <div className="intro text-2xl font-medium underline decoration-blue-300">
+        <div className="intro bg-transparent p-2  text-lg font-medium text-[#f9f4da] underline decoration-blue-300 md:text-2xl lg:text-3xl">
           {message}
         </div>
       ) : (
         <form
           method="post"
-          className="intro"
+          className="intro flex max-w-[100%] flex-col justify-center bg-[#231f20] md:block"
           onSubmit={handleSubmit}
           name="contact"
-          netlify="true"
         >
           <input
             type="email"
-            className="mb-5 min-w-[100%] border-0 border-b-2 border-slate-700 p-3 text-xl outline-none focus:ring-0 dark:bg-transparent lg:min-w-[10%] lg:text-3xl"
+            className="mb-5 max-w-full border-0 border-b-2 border-[#f9f4da] bg-transparent p-3 text-xl outline-none focus:ring-0 md:max-w-[70%]  lg:text-3xl"
             placeholder="john@example.com"
             ref={emailRef}
             required
           />
 
-          <span className="px-2"></span>
+          <span className="bg-transparent px-2"></span>
 
           {isLoading ? (
             <button
               type="submit"
-              className={`animate-fade-up relative mb-2 mr-2 rounded-lg bg-blue-300 px-8 py-3 text-lg font-semibold text-black transition delay-100 hover:opacity-80 focus:outline-2 focus:ring-4 focus:ring-gray-300 `}
+              className={`animate-fade-up relative mb-2 mr-2 rounded-lg bg-blue-300 px-8 py-3 text-lg font-semibold text-black transition delay-100 hover:opacity-80 focus:outline-2 focus:ring-4 focus:ring-gray-300  `}
             >
               Submit
             </button>
@@ -83,7 +82,7 @@ export default function MyForm() {
             <button
               disabled
               type="submit"
-              className={`animate-fade-up relative mb-2 mr-2 rounded-lg bg-blue-300 px-8 py-3 text-lg font-semibold text-black transition delay-100 hover:opacity-80 focus:outline-2 focus:ring-4 focus:ring-gray-300 `}
+              className={`animate-fade-up relative mb-2 mr-2 rounded-lg bg-blue-300 px-6 py-3 text-lg font-semibold text-black transition delay-100 hover:opacity-80 focus:outline-2 focus:ring-4 focus:ring-gray-300 `}
             >
               <svg
                 aria-hidden="true"
