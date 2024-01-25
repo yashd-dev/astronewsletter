@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build-and-push:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag yashddev/acm-chronicles:$(date +%0Y-%0m-%0d-%0H-%0M-%0S) --tag yashddev/acm-chronicles:latest
+    - name: DockerHub Login
+      run: docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_TOKEN }}
+    - name: Push to DockerHub
+      run: docker push --all-tags yashddev/acm-chronicles
+      
