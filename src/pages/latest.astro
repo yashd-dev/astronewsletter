@@ -14,11 +14,11 @@ const latestSlug = await useSanityClient().fetch(
     <title>Chronicles | ACM MPSTME</title>
     <script define:vars={{ latestSlug }}>
       window.onload = function () {
-        window.location.href = `/posts/${latestSlug}`;
+        window.location.href = `/newsletter/posts/${latestSlug}`;
       };
 
       function redirectToNgrok() {
-        window.location.href = `/posts/${latestSlug}`;
+        window.location.href = `/newsletter/posts/${latestSlug}`;
       }
     </script>
   </head>

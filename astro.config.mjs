@@ -9,7 +9,8 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://newsletter.yashd.tech",
+  site: "https://mpstme.acm.org/",
+  base: "/newsletter",
   prefetch: {
     prefetchAll: true,
   },

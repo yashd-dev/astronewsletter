@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://newsletter.yashd.tech/sitemap-index.xml

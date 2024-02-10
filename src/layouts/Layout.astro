@@ -1,7 +1,6 @@
 ---
 import "../styles/globals.css";
 import { Image } from "astro:assets";
-import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -9,44 +8,43 @@ import { ViewTransitions } from "astro:transitions";
   <head>
     <!-- Primary Meta Tags -->
     <title>Chronicles | ACM MPSTME</title>
-    <meta name="title" content="A Monthly Newsletter By ACM MPSTME!" />
+    <meta name="title" content="Monthly Newsletter | ACM MPSTME" />
     <meta
       name="description"
-      content="A Monthly Technical Newsletter By ACM MPSTME!"
+      content="Monthly Technical Newsletter | ACM MPSTME"
     />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://newsletter.yashd.tech/" />
+    <meta property="og:url" content="https://mpstme.acm.org/" />
     <meta property="og:title" content="Chronicles | ACM MPSTME" />
     <meta
       property="og:description"
-      content="A Monthly Newsletter By ACM MPSTME!"
+      content="Monthly Technical Newsletter | ACM MPSTME"
     />
     <meta
       property="og:image"
-      content="https://newsletter.yashd.tech/preview.png"
+      content="https://mpstme.acm.org/newsletter/preview.png"
     />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://newsletter.yashd.tech/" />
+    <meta property="twitter:url" content="https://mpstme.acm.org/" />
     <meta property="twitter:title" content="Chronicles | ACM MPSTME" />
     <meta
       property="twitter:description"
-      content="A Monthly Newsletter By ACM MPSTME!"
+      content="Monthly Technical Newsletter | ACM MPSTME"
     />
     <meta
       property="twitter:image"
-      content="https://newsletter.yashd.tech/preview.png"
+      content="https://mpstme.acm.org/newsletter/preview.png"
     />
 
-    <!-- Meta Tags Generated with https://metatags.io -->
 
     <meta charset="UTF-8" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="sitemap" href="/newsletter/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/newsletter/logo.png" />
 
     <meta name="generator" content={Astro.generator} />
   </head>
@@ -57,7 +55,7 @@ import { ViewTransitions } from "astro:transitions";
     >
       <div class="flex gap-3">
         <Image
-          src="/logo.png"
+          src="/newsletter/logo.png"
           class="w-12 lg:w-16 rounded-full"
           alt="Logo"
           height="400"
@@ -65,7 +63,7 @@ import { ViewTransitions } from "astro:transitions";
         />
         <div class="pt-2">
           <a
-            href="/"
+            href="/newsletter/"
             class="link-underline link-underline-black groww bg-transparent font-robotomono text-base md:text-lg text-chronicles-blue lg:text-xl"
           >
             ACM CHRONICLES
@@ -79,7 +77,7 @@ import { ViewTransitions } from "astro:transitions";
       </div>
 
       <a
-        href="/#Archives"
+        href="/newsletter/#Archives"
         class="link-underline link-underline-black bg-transparent groww font-robotomono text-lg lg:text-xl"
       >
         ARCHIVES
@@ -100,7 +98,7 @@ import { ViewTransitions } from "astro:transitions";
           target="_blank"
         >
           <Image
-            src={"/instagramdark.svg"}
+            src={"/newsletter/instagramdark.svg"}
             class="groww h-7 w-7 lg:h-10 lg:w-10"
             alt="Instagram Logo"
             height="400"
@@ -117,7 +115,7 @@ import { ViewTransitions } from "astro:transitions";
           target="_blank"
         >
           <Image
-            src={"/discorddark.svg"}
+            src={"/newsletter/discorddark.svg"}
             class="groww h-7 w-7 lg:h-10 lg:w-10"
             alt="Discord Logo"
             loading="lazy"
@@ -134,7 +132,7 @@ import { ViewTransitions } from "astro:transitions";
           target="_blank"
         >
           <Image
-            src={"/linkedindark.svg"}
+            src={"/newsletter/linkedindark.svg"}
             alt="Linkedin Logo"
             loading="lazy"
             height="400"
@@ -151,7 +149,7 @@ import { ViewTransitions } from "astro:transitions";
           target="_blank"
         >
           <Image
-            src={"/square-githubdark.svg"}
+            src={"/newsletter/square-githubdark.svg"}
             alt="Github Logo"
             height="400"
             width="400"
@@ -162,7 +160,7 @@ import { ViewTransitions } from "astro:transitions";
       </div>
 
       <a
-        href="/About"
+        href="About"
         class="bg-transparent link-underline link-underline-black groww font-robotomono text-lg lg:text-2xl"
       >
         ABOUT US
